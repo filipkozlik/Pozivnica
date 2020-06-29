@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Pozivnica/static/css/main.1637a13f.chunk.css",
-    "main.js": "/Pozivnica/static/js/main.c15d65dc.chunk.js",
-    "main.js.map": "/Pozivnica/static/js/main.c15d65dc.chunk.js.map",
+    "main.css": "/Pozivnica/static/css/main.60f53fb3.chunk.css",
+    "main.js": "/Pozivnica/static/js/main.d977f8c4.chunk.js",
+    "main.js.map": "/Pozivnica/static/js/main.d977f8c4.chunk.js.map",
     "runtime-main.js": "/Pozivnica/static/js/runtime-main.da1e768a.js",
     "runtime-main.js.map": "/Pozivnica/static/js/runtime-main.da1e768a.js.map",
-    "static/js/2.8adc6790.chunk.js": "/Pozivnica/static/js/2.8adc6790.chunk.js",
-    "static/js/2.8adc6790.chunk.js.map": "/Pozivnica/static/js/2.8adc6790.chunk.js.map",
+    "static/js/2.31f5a729.chunk.js": "/Pozivnica/static/js/2.31f5a729.chunk.js",
+    "static/js/2.31f5a729.chunk.js.map": "/Pozivnica/static/js/2.31f5a729.chunk.js.map",
     "index.html": "/Pozivnica/index.html",
-    "precache-manifest.d1dc57db2ac668c65fd0ff83d804db2d.js": "/Pozivnica/precache-manifest.d1dc57db2ac668c65fd0ff83d804db2d.js",
+    "precache-manifest.5f5febbde10b4a3128de6a8bc9185e65.js": "/Pozivnica/precache-manifest.5f5febbde10b4a3128de6a8bc9185e65.js",
     "service-worker.js": "/Pozivnica/service-worker.js",
-    "static/css/main.1637a13f.chunk.css.map": "/Pozivnica/static/css/main.1637a13f.chunk.css.map",
-    "static/js/2.8adc6790.chunk.js.LICENSE.txt": "/Pozivnica/static/js/2.8adc6790.chunk.js.LICENSE.txt"
+    "static/css/main.60f53fb3.chunk.css.map": "/Pozivnica/static/css/main.60f53fb3.chunk.css.map",
+    "static/js/2.31f5a729.chunk.js.LICENSE.txt": "/Pozivnica/static/js/2.31f5a729.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.da1e768a.js",
-    "static/js/2.8adc6790.chunk.js",
-    "static/css/main.1637a13f.chunk.css",
-    "static/js/main.c15d65dc.chunk.js"
+    "static/js/2.31f5a729.chunk.js",
+    "static/css/main.60f53fb3.chunk.css",
+    "static/js/main.d977f8c4.chunk.js"
   ]
 }
