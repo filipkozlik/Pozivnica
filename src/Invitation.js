@@ -1,28 +1,43 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  useParams,
-} from "react-router-dom";
 import "./Invitation.css";
 import guests from "./resources/json/guests.json";
+import MapContainer from "./components/map";
+import Response from "./components/response";
+import Field from "./components/input_field";
 
 class App extends Component {
   state = {
     width: window.innerWidth,
     height: window.innerHeight,
-    is_under_500: false,
-    is_under_1000: false,
-    is_under_1500: false,
-    is_under_2000: false,
-    is_over_2000: false,
+    wedding_date: Date.parse("28 Nov 2020 16:30:00 GMT+0200"),
+    remaining_days: 0,
+    remaining_hours: 0,
+    remaining_minutes: 0,
     refreshed: true,
+    hash: "",
+    title: "Poštovani",
+    single_person: false,
   };
 
   componentDidMount() {
-    // const { handle } = this.props.match.params;
-    // alert(handle);
+    let search = window.location.search;
+    let params = new URLSearchParams(search);
+    let invite = params.get("invite");
+    if (invite !== null) {
+      try {
+        let person = guests[invite];
+        this.setState({
+          hash: { invite },
+          title: person["title"],
+          single_person: person["single_person"],
+        });
+      } catch (Exception) {}
+    }
+    this.refreshRemainingTime();
+    this.refresh_countdown = setInterval(
+      this.refreshRemainingTime.bind(this),
+      15000
+    );
   }
 
   // Setting listener when component will mount
@@ -33,50 +48,26 @@ class App extends Component {
   // Removing listener when the component is not mounted anymore
   componentWillUnmount() {
     window.removeEventListener("resize", this.handleWindowSizeChange);
+    clearInterval(this.refresh_countdown);
   }
 
-  setupMobile = () => {};
-  setupHalfScreen = () => {};
-  setupFullScreen = () => {};
+  refreshRemainingTime() {
+    let remaining_time = this.state.wedding_date - Date.parse(new Date());
+    this.setState({
+      remaining_days: Math.floor(remaining_time / 1000 / 60 / 60 / 24),
+      remaining_hours: Math.floor((remaining_time / 1000 / 60 / 60) % 24),
+      remaining_minutes: Math.floor((remaining_time / 1000 / 60) % 60),
+    });
+  }
 
   refresh_states() {
     this.setState({ width: window.innerWidth });
     this.setState({ height: window.innerHeight });
-    this.setState({ is_under_500: window.innerWidth <= 500 });
-    this.setState({
-      is_under_1000: window.innerWidth <= 1000 && window.innerWidth > 500,
-    });
-    this.setState({
-      is_under_1500: window.innerWidth <= 1500 && window.innerWidth > 1000,
-    });
-    this.setState({
-      is_under_2000: window.innerWidth <= 2000 && window.innerWidth > 1500,
-    });
-    this.setState({
-      is_over_2000: window.innerWidth > 2000,
-    });
   }
 
   // Setting the width state
   handleWindowSizeChange = (caller = "Resize") => {
     this.refresh_states();
-    // alert(
-    //   caller +
-    //     "\n--Width: " +
-    //     this.state.width +
-    //     "\n--Height: " +
-    //     this.state.height +
-    //     "\n--Icon modifier: " +
-    //     this.state.iconModifier +
-    //     "\n--Mobile: " +
-    //     this.state.is_under_500 +
-    //     "\n--Half screen: " +
-    //     this.state.is_under_1000 +
-    //     "\n--Height: " +
-    //     window.innerHeight +
-    //     "\n--window.innerWidth: " +
-    //     window.innerWidth
-    // );
   };
 
   render() {
@@ -87,70 +78,80 @@ class App extends Component {
       }
     }
     return (
-      <Router>
-        <div class="wrapper">
-          <div class="box text header">
-            <Switch>
-              <Route path="/:hash" children={<Title />} />
-            </Switch>
+      <div className="site">
+        <div className="box text header">
+          <h1>{this.state.title},</h1>
+          <h1>
+            ovim putem pozivamo {this.state.single_person ? "te" : "vas"} na
+            naše vjenčanje.
+          </h1>
+          <h1>
+            Sve informacije o nama i našem vječanju{" "}
+            {this.state.single_person ? "možeš" : "možete"} pronaći u retcima
+            ispod.
+          </h1>
+          <h1>
+            Veselimo se {this.state.single_person ? "tvojem" : "vašem"} dolasku,
+          </h1>
+          <h1>Vaši Dolores i Filip</h1>
+        </div>
+        <div className="biography">
+          <div className="box about_doli_container doli_about_photo">
+            <div className="box center text name">Dolores</div>
+            <div className="center text about ">O Dolores</div>
           </div>
-          <div class="biography">
-            <div class="box about_doli_container doli_about_photo">
-              <div class="box center text name">Dolores</div>
-              <div class="center text about ">O Dolores</div>
+          <div className="box about_filip_container filip_about_photo">
+            <div className="box center text name">Filip</div>
+            <div className="center text about">O Filipu</div>
+          </div>
+        </div>
+        <div className="countdown">
+          <div className="box days countdown_color">
+            <div className="box center text countdown_title">
+              {this.state.remaining_days % 10 === 1 ? "Dan" : "Dana"}
             </div>
-            <div class="box about_filip_container filip_about_photo">
-              <div class="box center text name">Filip</div>
-              <div class="center text about">O Filipu</div>
+            <div className="center text countdown_value">
+              <h1>{this.state.remaining_days}</h1>
             </div>
           </div>
-          <div class="countdown">
-            <div class="box days countdown_color">
-              <div class="box center text countdown_title">Dana</div>
-              <div class="center text countdown_value">
-                <h1>150</h1>
-              </div>
+          <div className="box hours countdown_color">
+            <div className="box center text countdown_title">
+              {this.state.remaining_hours % 10 === 1
+                ? "Sat"
+                : (this.state.remaining_hours <= 10 ||
+                    this.state.remaining_hours > 20) &&
+                  this.state.remaining_hours % 10 > 1 &&
+                  this.state.remaining_hours % 10 < 5
+                ? "Sata"
+                : "Sati"}
             </div>
-            <div class="box hours countdown_color">
-              <div class="box center text countdown_title">Sati</div>
-              <div class="center text countdown_value">
-                <h1>3</h1>
-              </div>
+            <div className="center text countdown_value">
+              <h1>{this.state.remaining_hours}</h1>
             </div>
-            <div class="box minutes countdown_color">
-              <div class="box center text countdown_title">Minuta</div>
-              <div class="center text countdown_value">
-                <h1>34</h1>
-              </div>
+          </div>
+          <div className="box minutes countdown_color">
+            <div className="box center text countdown_title">
+              {(this.state.remaining_minutes <= 10 ||
+                this.state.remaining_minutes > 20) &&
+              this.state.remaining_minutes % 10 > 1 &&
+              this.state.remaining_minutes % 10 < 5
+                ? "Minute"
+                : "Minuta"}
+            </div>
+            <div className="center text countdown_value">
+              <h1>{this.state.remaining_minutes}</h1>
             </div>
           </div>
         </div>
-      </Router>
+        {/* <div className="map">
+          <MapContainer />
+        </div>
+        <div className="response">
+          <Field />
+        </div> */}
+      </div>
     );
   }
-}
-
-function Title() {
-  let { hash } = useParams();
-  return (
-    <div>
-      <h1>{guests[hash]["title"]},</h1>
-      <h1>
-        ovim putem pozivamo {guests[hash]["single_person"] ? "te" : "vas"} na
-        naše vjenčanje.
-      </h1>
-      <h1>
-        Sve informacije o nama i našem vječanju{" "}
-        {guests[hash]["single_person"] ? "možeš" : "možete"} pronaći u retcima
-        ispod.
-      </h1>
-      <h1>
-        Veselimo se {guests[hash]["single_person"] ? "tvojem" : "vašem"}{" "}
-        dolasku,
-      </h1>
-      <h1>Vaši Dolores i Filip</h1>
-    </div>
-  );
 }
 
 export default App;
