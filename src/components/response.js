@@ -1,11 +1,6 @@
 import React, { Component } from "react";
+import Field from "./input_field";
 import "./response.css";
-
-const response_style = {
-  width: "90%",
-  height: "90%",
-  "border-radius": "10px",
-};
 
 class Response extends Component {
   constructor(props) {
@@ -21,17 +16,18 @@ class Response extends Component {
 
   render() {
     return (
-      <div className="field">
-        <form>
-          <label>
-            Name:
-            <input type="text" name="name" />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
-        <button type="button" onClick={this.onSubmit} className="btn">
-          Save
-        </button>
+      <div className="field grid-container">
+        <div className="left-container">
+          <div className="item1">Dolazak</div>
+          <div className="item3">Koliko osoba</div>
+        </div>
+        <div className="right-container">
+          <div className="item2">2</div>
+          <div className="item4">4</div>
+        </div>
+        <div className="bottom-container">
+          <div className="send">Pošalji</div>
+        </div>
       </div>
     );
   }

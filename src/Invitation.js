@@ -3,7 +3,6 @@ import "./Invitation.css";
 import guests from "./resources/json/guests.json";
 import MapContainer from "./components/map";
 import Response from "./components/response";
-import Field from "./components/input_field";
 
 class App extends Component {
   state = {
@@ -145,10 +144,10 @@ class App extends Component {
         </div>
         {/* <div className="map">
           <MapContainer />
-        </div>
-        <div className="response">
-          <Field />
         </div> */}
+        <div className="response">
+          <Response />
+        </div>
       </div>
     );
   }
