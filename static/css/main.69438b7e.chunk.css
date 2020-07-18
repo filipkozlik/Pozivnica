@@ -1,2 +1,0 @@
-.body{margin:0}.site{display:grid;grid-template-columns:auto;grid-template-rows:auto auto auto auto auto;grid-row-gap:50px;row-gap:50px;grid-template-areas:"header_photo" "couple_name"}@supports (display:grid){@media screen and (max-width:1000px){.photo{display:block;margin-left:auto;margin-right:auto;width:70%}}@media screen and (min-width:1000px){.photo{display:block;margin-left:auto;margin-right:auto;width:50%}}}
-/*# sourceMappingURL=main.69438b7e.chunk.css.map */
