@@ -48,16 +48,33 @@
     "send_response";
 }
 
-.grid_container_collapsed > div > div {
-  background-color: rgb(184, 243, 253);
-  background-color: rgb(135, 227, 243);
-  /* font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; */
-  font-family: "Luminari", fantasy;
-  text-align: center;
-  padding: 10px 0;
-  font-size: 40px;
-  align-self: center;
-  width: 100%;
+@supports (display: grid) {
+  @media screen and (min-width: 500px) {
+    .grid_container_collapsed > div > div {
+      background-color: rgb(184, 243, 253);
+      background-color: rgb(135, 227, 243);
+      /* font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; */
+      font-family: "Luminari", fantasy;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 20px;
+      align-self: center;
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    .grid_container_collapsed > div > div {
+      background-color: rgb(184, 243, 253);
+      background-color: rgb(135, 227, 243);
+      /* font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; */
+      font-family: "Luminari", fantasy;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 40px;
+      align-self: center;
+      width: 100%;
+    }
+  }
 }
 
 .toggle_arriving {
