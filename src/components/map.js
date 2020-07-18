@@ -2,10 +2,16 @@
 
 import React, { Component } from "react";
 import {
+  withGoogleMap,
+  withScriptjs,
   Map,
   GoogleApiWrapper,
   Marker,
   DirectionsRenderer,
+  DirectionsService,
+  TravelMode,
+  DirectionsStatus,
+  LatLng,
 } from "google-maps-react";
 
 const mapStyles = {
@@ -24,6 +30,37 @@ export class MapContainer extends Component {
         { latitude: 45.822677, longitude: 16.105145 },
       ],
     };
+  }
+
+  componentDidMount() {
+    const origin = { lat: 6.5244, lng: 3.3792 };
+    const destination = { lat: 6.4667, lng: 3.45 };
+
+    DirectionsService.route(
+      {
+        origin: origin,
+        destination: destination,
+        travelMode: TravelMode.DRIVING,
+        waypoints: [
+          {
+            location: new LatLng(6.4698, 3.5852),
+          },
+          {
+            location: new LatLng(6.6018, 3.3515),
+          },
+        ],
+      },
+      (result, status) => {
+        if (status === DirectionsStatus.OK) {
+          console.log(result);
+          this.setState({
+            directions: result,
+          });
+        } else {
+          console.error(`error fetching directions ${result}`);
+        }
+      }
+    );
   }
 
   displayMarkers = () => {
@@ -50,6 +87,7 @@ export class MapContainer extends Component {
         style={mapStyles}
         initialCenter={{ lat: 45.7975162, lng: 16.04470185 }}
       >
+        <DirectionsRenderer directions={this.state.directions} />
         {this.displayMarkers()}
       </Map>
     );

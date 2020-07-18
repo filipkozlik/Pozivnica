@@ -145,7 +145,7 @@ class App extends Component {
         {/* <div className="map">
           <MapContainer />
         </div> */}
-        <div className="response">
+        <div className="response center">
           <Response />
         </div>
       </div>

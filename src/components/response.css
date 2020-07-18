@@ -11,35 +11,73 @@
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
 }
 
-.grid-container {
+.guests_input {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s all;
+}
+.guests_input:hover {
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+.response_text {
+  text-align: center;
+}
+
+.grid_container_collapsed {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  position: relative;
+  transition: 0.3s all;
   display: grid;
-  grid-template-columns: auto auto;
   grid-template-rows: auto auto;
-  grid-gap: 10px;
-  background-color: #2196f3;
+  row-gap: 3px;
+  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgb(184, 243, 253);
+  background-color: rgb(135, 227, 243);
   padding: 10px;
   grid-template-areas:
-    "left-container right-container"
-    "bottom-container bottom-container";
+    "toggle_arriving"
+    "number_of_guests"
+    "send_response";
 }
 
-.grid-container > div > div {
-  background-color: rgba(255, 255, 255, 0.8);
+.grid_container_collapsed > div > div {
+  background-color: rgb(184, 243, 253);
+  background-color: rgb(135, 227, 243);
+  /* font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; */
+  font-family: "Luminari", fantasy;
   text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
+  padding: 10px 0;
+  font-size: 40px;
+  align-self: center;
+  width: 100%;
 }
 
-.left-container {
-  display: grid;
-  grid-row-gap: 10px;
+.toggle_arriving {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.right-container {
-  display: grid;
-  grid-row-gap: 10px;
+.number_of_guests {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.bottom-container {
-  display: contents;
+.send_response {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

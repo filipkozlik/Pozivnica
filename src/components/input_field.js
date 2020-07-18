@@ -17,7 +17,7 @@ export default class Field extends Component {
     focussed: false,
     value: "",
     error: "",
-    label: "Koliko osoba?",
+    label: "U kojem broju?",
     onChange: () => "",
   };
   constructor(props) {
