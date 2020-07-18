@@ -1,0 +1,2 @@
+@supports (display:grid){@media screen and (max-width:1000px){.photo{width:80%;justify-content:center}}@media screen and (min-width:1000px){.photo{width:50%;justify-content:center}}}
+/*# sourceMappingURL=main.9b559ce5.chunk.css.map */
