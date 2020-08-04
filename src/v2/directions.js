@@ -10,9 +10,12 @@ class Directions extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.show_directions}>Upute</button>
-      </div>
+      <button
+        className="animated bounce button_style"
+        onClick={this.show_directions}
+      >
+        Upute
+      </button>
     );
   }
 }

@@ -1,100 +1,101 @@
-.field {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: 0.3s all;
-}
-.field:hover {
-  background-color: rgba(255, 255, 255, 0.45);
-  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+.button_style {
+  width: 150px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(247, 157, 179, 0.3);
+  border-color: rgba(247, 157, 179, 0.3);
+  font-size: 30px;
 }
 
-.guests_input {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: 0.3s all;
-}
-.guests_input:hover {
-  background-color: rgba(255, 255, 255, 0.45);
-  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+.button_style_round {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(247, 157, 179, 0.3);
+  border-color: rgba(247, 157, 179, 0.3);
+  font-size: 30px;
+  justify-content: right;
+  outline: none;
 }
 
-.response_text {
-  text-align: center;
+.animated {
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0);
+  }
+  2% {
+    -webkit-transform: translateY(-5px);
+  }
+  4% {
+    -webkit-transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0);
+  }
+  2% {
+    -webkit-transform: translateY(-5px);
+  }
+  4% {
+    -webkit-transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
 }
 
-.grid_container_collapsed {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  position: relative;
-  transition: 0.3s all;
+.response_container {
   display: grid;
-  grid-template-rows: auto auto;
-  row-gap: 3px;
-  background-color: rgba(255, 255, 255, 0.3);
-  background-color: rgba(0, 0, 0, 0.3);
-  background-color: rgb(184, 243, 253);
-  background-color: rgb(135, 227, 243);
-  padding: 10px;
+  row-gap: 10px;
+  column-gap: 10px;
   grid-template-areas:
-    "toggle_arriving"
-    "number_of_guests"
-    "send_response";
+    "question_coming . toggle_button ."
+    "question_number minus_button number_of_people plus_button"
+    ". send_button send_button .";
 }
 
-@supports (display: grid) {
-  @media screen and (min-width: 500px) {
-    .grid_container_collapsed > div > div {
-      background-color: rgb(184, 243, 253);
-      background-color: rgb(135, 227, 243);
-      /* font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; */
-      font-family: "Luminari", fantasy;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 20px;
-      align-self: center;
-      width: 100%;
-    }
-  }
-  @media screen and (min-width: 1000px) {
-    .grid_container_collapsed > div > div {
-      background-color: rgb(184, 243, 253);
-      background-color: rgb(135, 227, 243);
-      /* font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; */
-      font-family: "Luminari", fantasy;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 40px;
-      align-self: center;
-      width: 100%;
-    }
-  }
-}
-
-.toggle_arriving {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.response_container > div {
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  font-size: 30px;
 }
 
-.number_of_guests {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.question_coming {
+  grid-area: question_coming;
 }
-
-.send_response {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.toggle_button {
+  grid-area: toggle_button;
+}
+.question_number {
+  grid-area: question_number;
+}
+.minus_button {
+  grid-area: minus_button;
+}
+.number_of_people {
+  grid-area: number_of_people;
+}
+.plus_button {
+  grid-area: plus_button;
+}
+.send_button {
+  grid-area: send_button;
 }

@@ -5,7 +5,7 @@ import guests from "../resources/json/guests.json";
 class WelcomeMessage extends Component {
   state = {
     hash: "",
-    title: "Poštovani",
+    title: "Dragi",
     single_person: false,
   };
 
@@ -28,12 +28,10 @@ class WelcomeMessage extends Component {
   render() {
     return (
       <div className="text">
-        {this.state.title}, ovim putem pozivamo
-        {this.state.single_person ? "te" : "vas"} na naše vjenčanje. Sve
-        informacije o nama i našem vječanju{" "}
-        {this.state.single_person ? "možeš" : "možete"} pronaći u retcima ispod.
-        Veselimo se {this.state.single_person ? "tvojem" : "vašem"} dolasku,
-        Vaši Dolores i Filip
+        {this.state.title},<br></br> s radošću
+        {this.state.single_person ? " te " : " vas "} pozivamo da
+        {this.state.single_person ? " budeš " : " budete "} dio našeg velikog
+        dana!
       </div>
     );
   }

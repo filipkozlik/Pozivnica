@@ -12,7 +12,7 @@ class HeaderText extends Component {
     remaining_minutes: 0,
     refreshed: true,
     hash: "",
-    title: "Poštovani",
+    title: "Dragi",
     single_person: false,
   };
 
@@ -72,18 +72,10 @@ class HeaderText extends Component {
       <div className="box text header">
         <h1>{this.state.title},</h1>
         <h1>
-          ovim putem pozivamo {this.state.single_person ? "te" : "vas"} na naše
-          vjenčanje.
+          s radošću {this.state.single_person ? "te" : "vas"} pozivamo da{" "}
+          {this.state.single_person ? "budeš" : "budete"} dio našeg velikog
+          dana!
         </h1>
-        <h1>
-          Sve informacije o nama i našem vječanju{" "}
-          {this.state.single_person ? "možeš" : "možete"} pronaći u retcima
-          ispod.
-        </h1>
-        <h1>
-          Veselimo se {this.state.single_person ? "tvojem" : "vašem"} dolasku,
-        </h1>
-        <h1>Vaši Dolores i Filip</h1>
       </div>
     );
   }

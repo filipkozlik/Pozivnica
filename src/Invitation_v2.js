@@ -7,6 +7,7 @@ import Countdown from "./v2/countdown";
 import Response from "./v2/response";
 import Spacer from "./v2/spacer";
 import Directions from "./v2/directions";
+import Form from "./v2/response_form";
 
 class App extends Component {
   render() {
