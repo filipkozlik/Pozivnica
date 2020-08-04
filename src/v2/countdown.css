@@ -1,0 +1,84 @@
+.countdown {
+  display: grid;
+  width: 95vw;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    /* "title title title title title"
+    "number_days heart1 number_hours heart2 number_minutes"
+    "title_days heart1 title_hours heart2 title_minutes"; */
+    "title title title"
+    "number_days number_hours number_minutes"
+    "title_days title_hours title_minutes";
+}
+
+@supports (display: grid) {
+  @media screen and (max-width: 1000px) {
+    .countdown {
+      margin-left: 15vw;
+      margin-right: 15vw;
+      width: 65vw;
+      row-gap: 1px;
+    }
+    .countdown > div {
+      text-align: center;
+      align-self: center;
+      justify-self: center;
+      font-size: 20px;
+    }
+    .heart {
+      width: 60%;
+    }
+    .title {
+      font-size: 30px;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    .countdown {
+      margin-left: 20vw;
+      margin-right: 20vw;
+      width: 55vw;
+      row-gap: 10px;
+    }
+    .countdown > div {
+      text-align: center;
+      align-self: center;
+      justify-self: center;
+      font-size: 40px;
+    }
+    .heart {
+      width: 100%;
+    }
+    .title {
+      font-size: 60px;
+    }
+  }
+}
+
+.title {
+  grid-area: title;
+}
+.heart1 {
+  grid-area: heart1;
+}
+.heart2 {
+  grid-area: heart2;
+}
+.number_days {
+  grid-area: number_days;
+}
+.title_days {
+  grid-area: title_days;
+}
+.number_hours {
+  grid-area: number_hours;
+}
+.title_hours {
+  grid-area: title_hours;
+}
+.number_minutes {
+  grid-area: number_minutes;
+}
+.title_minutes {
+  grid-area: title_minutes;
+}

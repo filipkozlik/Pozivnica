@@ -1,0 +1,100 @@
+.field {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s all;
+}
+.field:hover {
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+.guests_input {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s all;
+}
+.guests_input:hover {
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+.response_text {
+  text-align: center;
+}
+
+.grid_container_collapsed {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  position: relative;
+  transition: 0.3s all;
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 3px;
+  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgb(184, 243, 253);
+  background-color: rgb(135, 227, 243);
+  padding: 10px;
+  grid-template-areas:
+    "toggle_arriving"
+    "number_of_guests"
+    "send_response";
+}
+
+@supports (display: grid) {
+  @media screen and (min-width: 500px) {
+    .grid_container_collapsed > div > div {
+      background-color: rgb(184, 243, 253);
+      background-color: rgb(135, 227, 243);
+      /* font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; */
+      font-family: "Luminari", fantasy;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 20px;
+      align-self: center;
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    .grid_container_collapsed > div > div {
+      background-color: rgb(184, 243, 253);
+      background-color: rgb(135, 227, 243);
+      /* font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; */
+      font-family: "Luminari", fantasy;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 40px;
+      align-self: center;
+      width: 100%;
+    }
+  }
+}
+
+.toggle_arriving {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.number_of_guests {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.send_response {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
