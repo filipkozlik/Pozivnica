@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6fcbee862c4bf8d3148bab76c05f4805",
+    "revision": "91e386f73b8f4c55b3ee6c760ca5a275",
     "url": "/Pozivnica/index.html"
   },
   {
-    "revision": "a96a49ed41006e500454",
-    "url": "/Pozivnica/static/css/main.c6a9209b.chunk.css"
+    "revision": "6b817d9395c8500990bf",
+    "url": "/Pozivnica/static/css/main.9d9995ff.chunk.css"
   },
   {
-    "revision": "5a85b0a2e551785031f4",
-    "url": "/Pozivnica/static/js/2.7ba5ada9.chunk.js"
+    "revision": "c4242d2c90dbf5ff870c",
+    "url": "/Pozivnica/static/js/2.fec5636f.chunk.js"
   },
   {
     "revision": "2c598234c7a24970b5fdf032f602e7bc",
-    "url": "/Pozivnica/static/js/2.7ba5ada9.chunk.js.LICENSE.txt"
+    "url": "/Pozivnica/static/js/2.fec5636f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a96a49ed41006e500454",
-    "url": "/Pozivnica/static/js/main.699cc940.chunk.js"
+    "revision": "6b817d9395c8500990bf",
+    "url": "/Pozivnica/static/js/main.aa6b9ef8.chunk.js"
   },
   {
     "revision": "1d1491370de9bb1100cf",
