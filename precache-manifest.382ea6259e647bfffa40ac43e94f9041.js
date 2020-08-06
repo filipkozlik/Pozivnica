@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bccad6021d378df60b867cc268565231",
+    "revision": "e2f7b1bab96129c84a7c46383ef9d5bc",
     "url": "/Pozivnica/index.html"
   },
   {
-    "revision": "99d1d9efc4681b28d159",
-    "url": "/Pozivnica/static/css/main.63c70748.chunk.css"
+    "revision": "d9396ae2038732ed9d0f",
+    "url": "/Pozivnica/static/css/main.d1118cc1.chunk.css"
   },
   {
     "revision": "dc94ba06d1f7817f5659",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Pozivnica/static/js/2.6c647af2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "99d1d9efc4681b28d159",
+    "revision": "d9396ae2038732ed9d0f",
     "url": "/Pozivnica/static/js/main.1ac9d138.chunk.js"
   },
   {
