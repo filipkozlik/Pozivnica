@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Pozivnica/static/css/main.2726d118.chunk.css",
+    "main.css": "/Pozivnica/static/css/main.6b2a215b.chunk.css",
     "main.js": "/Pozivnica/static/js/main.b209384a.chunk.js",
     "main.js.map": "/Pozivnica/static/js/main.b209384a.chunk.js.map",
     "runtime-main.js": "/Pozivnica/static/js/runtime-main.da1e768a.js",
@@ -8,9 +8,9 @@
     "static/js/2.6c647af2.chunk.js": "/Pozivnica/static/js/2.6c647af2.chunk.js",
     "static/js/2.6c647af2.chunk.js.map": "/Pozivnica/static/js/2.6c647af2.chunk.js.map",
     "index.html": "/Pozivnica/index.html",
-    "precache-manifest.2b51a24daf8b3f1b01e265f97fbc3b0a.js": "/Pozivnica/precache-manifest.2b51a24daf8b3f1b01e265f97fbc3b0a.js",
+    "precache-manifest.2749832549ae4967f340743dd39b281e.js": "/Pozivnica/precache-manifest.2749832549ae4967f340743dd39b281e.js",
     "service-worker.js": "/Pozivnica/service-worker.js",
-    "static/css/main.2726d118.chunk.css.map": "/Pozivnica/static/css/main.2726d118.chunk.css.map",
+    "static/css/main.6b2a215b.chunk.css.map": "/Pozivnica/static/css/main.6b2a215b.chunk.css.map",
     "static/js/2.6c647af2.chunk.js.LICENSE.txt": "/Pozivnica/static/js/2.6c647af2.chunk.js.LICENSE.txt",
     "static/media/date_black.PNG": "/Pozivnica/static/media/date_black.5801dccc.PNG",
     "static/media/itinerary.png": "/Pozivnica/static/media/itinerary.d7b7b134.png",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.da1e768a.js",
     "static/js/2.6c647af2.chunk.js",
-    "static/css/main.2726d118.chunk.css",
+    "static/css/main.6b2a215b.chunk.css",
     "static/js/main.b209384a.chunk.js"
   ]
 }
