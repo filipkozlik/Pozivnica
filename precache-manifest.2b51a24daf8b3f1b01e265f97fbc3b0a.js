@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9f87788a577a4db23e4c1e9cc9a9d1d5",
+    "revision": "e1d8d6a3b3e269be0e48acda81e842a0",
     "url": "/Pozivnica/index.html"
   },
   {
