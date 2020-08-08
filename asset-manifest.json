@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/Pozivnica/static/css/main.0a3cdaed.chunk.css",
-    "main.js": "/Pozivnica/static/js/main.acf3d97f.chunk.js",
-    "main.js.map": "/Pozivnica/static/js/main.acf3d97f.chunk.js.map",
+    "main.css": "/Pozivnica/static/css/main.af4c765b.chunk.css",
+    "main.js": "/Pozivnica/static/js/main.cb567df0.chunk.js",
+    "main.js.map": "/Pozivnica/static/js/main.cb567df0.chunk.js.map",
     "runtime-main.js": "/Pozivnica/static/js/runtime-main.da1e768a.js",
     "runtime-main.js.map": "/Pozivnica/static/js/runtime-main.da1e768a.js.map",
-    "static/js/2.013993b2.chunk.js": "/Pozivnica/static/js/2.013993b2.chunk.js",
-    "static/js/2.013993b2.chunk.js.map": "/Pozivnica/static/js/2.013993b2.chunk.js.map",
+    "static/js/2.2bce0986.chunk.js": "/Pozivnica/static/js/2.2bce0986.chunk.js",
+    "static/js/2.2bce0986.chunk.js.map": "/Pozivnica/static/js/2.2bce0986.chunk.js.map",
     "index.html": "/Pozivnica/index.html",
-    "precache-manifest.26d4aa29ccbbc5bc720161e00b6b4dbd.js": "/Pozivnica/precache-manifest.26d4aa29ccbbc5bc720161e00b6b4dbd.js",
+    "precache-manifest.8f60347b7bfcb769ae1462dc24b2d250.js": "/Pozivnica/precache-manifest.8f60347b7bfcb769ae1462dc24b2d250.js",
     "service-worker.js": "/Pozivnica/service-worker.js",
-    "static/css/main.0a3cdaed.chunk.css.map": "/Pozivnica/static/css/main.0a3cdaed.chunk.css.map",
-    "static/js/2.013993b2.chunk.js.LICENSE.txt": "/Pozivnica/static/js/2.013993b2.chunk.js.LICENSE.txt",
+    "static/css/main.af4c765b.chunk.css.map": "/Pozivnica/static/css/main.af4c765b.chunk.css.map",
+    "static/js/2.2bce0986.chunk.js.LICENSE.txt": "/Pozivnica/static/js/2.2bce0986.chunk.js.LICENSE.txt",
     "static/media/date_black.PNG": "/Pozivnica/static/media/date_black.5801dccc.PNG",
+    "static/media/dolores_filip_square.jpg": "/Pozivnica/static/media/dolores_filip_square.a4630538.jpg",
     "static/media/itinerary.png": "/Pozivnica/static/media/itinerary.d7b7b134.png",
     "static/media/kissing_couple_1.png": "/Pozivnica/static/media/kissing_couple_1.74894873.png"
   },
   "entrypoints": [
     "static/js/runtime-main.da1e768a.js",
-    "static/js/2.013993b2.chunk.js",
-    "static/css/main.0a3cdaed.chunk.css",
-    "static/js/main.acf3d97f.chunk.js"
+    "static/js/2.2bce0986.chunk.js",
+    "static/css/main.af4c765b.chunk.css",
+    "static/js/main.cb567df0.chunk.js"
   ]
 }
