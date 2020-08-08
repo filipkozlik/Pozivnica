@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "aeebd5b5d5e406c56c67d37b551daf59",
+    "revision": "00e8c2713dd498f81950d148f2938508",
     "url": "/Pozivnica/index.html"
   },
   {
-    "revision": "7e00b7e10bd4fc7b60ff",
+    "revision": "b276b7d3db2daf962642",
     "url": "/Pozivnica/static/css/main.af4c765b.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Pozivnica/static/js/2.2bce0986.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7e00b7e10bd4fc7b60ff",
-    "url": "/Pozivnica/static/js/main.cb567df0.chunk.js"
+    "revision": "b276b7d3db2daf962642",
+    "url": "/Pozivnica/static/js/main.4ca3c09f.chunk.js"
   },
   {
     "revision": "1d1491370de9bb1100cf",
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Pozivnica/static/media/date_black.5801dccc.PNG"
   },
   {
-    "revision": "a4630538482c355b228785b8d4974795",
-    "url": "/Pozivnica/static/media/dolores_filip_square.a4630538.jpg"
+    "revision": "3341fd32a47ff0d90d4af389125a670f",
+    "url": "/Pozivnica/static/media/df.3341fd32.jpg"
   },
   {
     "revision": "d7b7b1340c82298b227f2f9960568191",
