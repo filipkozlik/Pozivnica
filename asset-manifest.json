@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/Pozivnica/static/css/main.917be144.chunk.css",
-    "main.js": "/Pozivnica/static/js/main.57249391.chunk.js",
-    "main.js.map": "/Pozivnica/static/js/main.57249391.chunk.js.map",
+    "main.css": "/Pozivnica/static/css/main.e369d66c.chunk.css",
+    "main.js": "/Pozivnica/static/js/main.ed16fcee.chunk.js",
+    "main.js.map": "/Pozivnica/static/js/main.ed16fcee.chunk.js.map",
     "runtime-main.js": "/Pozivnica/static/js/runtime-main.da1e768a.js",
     "runtime-main.js.map": "/Pozivnica/static/js/runtime-main.da1e768a.js.map",
-    "static/js/2.c7b4079f.chunk.js": "/Pozivnica/static/js/2.c7b4079f.chunk.js",
-    "static/js/2.c7b4079f.chunk.js.map": "/Pozivnica/static/js/2.c7b4079f.chunk.js.map",
+    "static/js/2.1452343d.chunk.js": "/Pozivnica/static/js/2.1452343d.chunk.js",
+    "static/js/2.1452343d.chunk.js.map": "/Pozivnica/static/js/2.1452343d.chunk.js.map",
     "index.html": "/Pozivnica/index.html",
-    "precache-manifest.5d96354cc2d6425afafc2028d8585377.js": "/Pozivnica/precache-manifest.5d96354cc2d6425afafc2028d8585377.js",
+    "precache-manifest.db2c4ed21f2efbaecc3caa29d0fade18.js": "/Pozivnica/precache-manifest.db2c4ed21f2efbaecc3caa29d0fade18.js",
     "service-worker.js": "/Pozivnica/service-worker.js",
-    "static/css/main.917be144.chunk.css.map": "/Pozivnica/static/css/main.917be144.chunk.css.map",
-    "static/js/2.c7b4079f.chunk.js.LICENSE.txt": "/Pozivnica/static/js/2.c7b4079f.chunk.js.LICENSE.txt",
+    "static/css/main.e369d66c.chunk.css.map": "/Pozivnica/static/css/main.e369d66c.chunk.css.map",
+    "static/js/2.1452343d.chunk.js.LICENSE.txt": "/Pozivnica/static/js/2.1452343d.chunk.js.LICENSE.txt",
+    "static/media/couple_about_text.png": "/Pozivnica/static/media/couple_about_text.317df6cb.png",
     "static/media/date_black.PNG": "/Pozivnica/static/media/date_black.5801dccc.PNG",
-    "static/media/df.jpg": "/Pozivnica/static/media/df.3341fd32.jpg",
+    "static/media/df.jpg": "/Pozivnica/static/media/df.e3d1189b.jpg",
     "static/media/itinerary.png": "/Pozivnica/static/media/itinerary.d7b7b134.png",
     "static/media/kissing_couple_1.png": "/Pozivnica/static/media/kissing_couple_1.74894873.png"
   },
   "entrypoints": [
     "static/js/runtime-main.da1e768a.js",
-    "static/js/2.c7b4079f.chunk.js",
-    "static/css/main.917be144.chunk.css",
-    "static/js/main.57249391.chunk.js"
+    "static/js/2.1452343d.chunk.js",
+    "static/css/main.e369d66c.chunk.css",
+    "static/js/main.ed16fcee.chunk.js"
   ]
 }
