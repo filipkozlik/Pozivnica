@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Pozivnica/precache-manifest.fd2f167d63b372e81d15597f6ec90b11.js"
+  "/Pozivnica/precache-manifest.243574b7a481836d5fb751fe64d49a1f.js"
 );
 
 self.addEventListener('message', (event) => {
