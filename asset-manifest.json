@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/Pozivnica/static/css/main.23bd11d9.chunk.css",
-    "main.js": "/Pozivnica/static/js/main.8588244d.chunk.js",
-    "main.js.map": "/Pozivnica/static/js/main.8588244d.chunk.js.map",
+    "main.js": "/Pozivnica/static/js/main.c71f6ee0.chunk.js",
+    "main.js.map": "/Pozivnica/static/js/main.c71f6ee0.chunk.js.map",
     "runtime-main.js": "/Pozivnica/static/js/runtime-main.da1e768a.js",
     "runtime-main.js.map": "/Pozivnica/static/js/runtime-main.da1e768a.js.map",
     "static/js/2.ae26deca.chunk.js": "/Pozivnica/static/js/2.ae26deca.chunk.js",
     "static/js/2.ae26deca.chunk.js.map": "/Pozivnica/static/js/2.ae26deca.chunk.js.map",
     "index.html": "/Pozivnica/index.html",
-    "precache-manifest.572b3113cc15c7e3530f2e5b50202ed2.js": "/Pozivnica/precache-manifest.572b3113cc15c7e3530f2e5b50202ed2.js",
+    "precache-manifest.dce2d2b8f614481ac3a9f23ace084b3c.js": "/Pozivnica/precache-manifest.dce2d2b8f614481ac3a9f23ace084b3c.js",
     "service-worker.js": "/Pozivnica/service-worker.js",
     "static/css/main.23bd11d9.chunk.css.map": "/Pozivnica/static/css/main.23bd11d9.chunk.css.map",
     "static/js/2.ae26deca.chunk.js.LICENSE.txt": "/Pozivnica/static/js/2.ae26deca.chunk.js.LICENSE.txt",
     "static/media/couple_about_text.png": "/Pozivnica/static/media/couple_about_text.da790e46.png",
     "static/media/date_black.PNG": "/Pozivnica/static/media/date_black.5801dccc.PNG",
     "static/media/df.jpg": "/Pozivnica/static/media/df.e3d1189b.jpg",
-    "static/media/itinerary.png": "/Pozivnica/static/media/itinerary.d7b7b134.png",
+    "static/media/itinerary.png": "/Pozivnica/static/media/itinerary.d46ff672.png",
     "static/media/kissing_couple_1.png": "/Pozivnica/static/media/kissing_couple_1.74894873.png"
   },
   "entrypoints": [
     "static/js/runtime-main.da1e768a.js",
     "static/js/2.ae26deca.chunk.js",
     "static/css/main.23bd11d9.chunk.css",
-    "static/js/main.8588244d.chunk.js"
+    "static/js/main.c71f6ee0.chunk.js"
   ]
 }

@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2324aef7f0a7726551c16f4e4d52936e",
+    "revision": "fbf3dbcb5facf795720f48947c9964da",
     "url": "/Pozivnica/index.html"
   },
   {
-    "revision": "8cb86f152a2d45b0130e",
+    "revision": "f951a0d747f96fee96e1",
     "url": "/Pozivnica/static/css/main.23bd11d9.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Pozivnica/static/js/2.ae26deca.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8cb86f152a2d45b0130e",
-    "url": "/Pozivnica/static/js/main.8588244d.chunk.js"
+    "revision": "f951a0d747f96fee96e1",
+    "url": "/Pozivnica/static/js/main.c71f6ee0.chunk.js"
   },
   {
     "revision": "1d1491370de9bb1100cf",
@@ -36,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Pozivnica/static/media/df.e3d1189b.jpg"
   },
   {
-    "revision": "d7b7b1340c82298b227f2f9960568191",
-    "url": "/Pozivnica/static/media/itinerary.d7b7b134.png"
+    "revision": "d46ff672df8bb5692ba83650d9181e1a",
+    "url": "/Pozivnica/static/media/itinerary.d46ff672.png"
   },
   {
     "revision": "74894873c6007d808d7871b1d8c1fba6",
