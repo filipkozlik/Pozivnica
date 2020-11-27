@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2827126e0f10ddccea76def88eaf74a4",
+    "revision": "4ada3db7a4602962a0c15d9e6d54ed11",
     "url": "/Pozivnica/index.html"
   },
   {
-    "revision": "1aa40517c7a7ee177be8",
+    "revision": "16d5c5e349a34bc69fe9",
     "url": "/Pozivnica/static/css/main.23bd11d9.chunk.css"
   },
   {
@@ -16,24 +16,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Pozivnica/static/js/2.ae26deca.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1aa40517c7a7ee177be8",
-    "url": "/Pozivnica/static/js/main.16972292.chunk.js"
+    "revision": "16d5c5e349a34bc69fe9",
+    "url": "/Pozivnica/static/js/main.51ffda6f.chunk.js"
   },
   {
     "revision": "1d1491370de9bb1100cf",
     "url": "/Pozivnica/static/js/runtime-main.da1e768a.js"
   },
   {
+    "revision": "6d5eadf70f02e44de1897a6da9ec6c35",
+    "url": "/Pozivnica/static/media/D&F_054.6d5eadf7.jpg"
+  },
+  {
     "revision": "43bc85f847704a469175b4c16c753ca9",
     "url": "/Pozivnica/static/media/couple_about_text.43bc85f8.png"
   },
   {
-    "revision": "5801dccca859080ff407eda2e6b00efb",
-    "url": "/Pozivnica/static/media/date_black.5801dccc.PNG"
-  },
-  {
-    "revision": "e3d1189bf7b8ee8c071d511ccb4aad45",
-    "url": "/Pozivnica/static/media/df.e3d1189b.jpg"
+    "revision": "c4342e79de5544a677e66e3efa2fb56a",
+    "url": "/Pozivnica/static/media/date_black_summer.c4342e79.PNG"
   },
   {
     "revision": "d46ff672df8bb5692ba83650d9181e1a",
