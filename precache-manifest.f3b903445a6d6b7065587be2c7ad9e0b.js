@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e729cc98fbdc4b3ad411ebe8e7e7e79c",
+    "revision": "7360f4624a8b8ff4be9bb13a701b507c",
     "url": "/Pozivnica/index.html"
   },
   {
-    "revision": "05bc83b951c0a2ed95f1",
+    "revision": "16d36f5fdab834433bbe",
     "url": "/Pozivnica/static/css/main.728ca6d4.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Pozivnica/static/js/2.e029da29.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "05bc83b951c0a2ed95f1",
-    "url": "/Pozivnica/static/js/main.ae076c46.chunk.js"
+    "revision": "16d36f5fdab834433bbe",
+    "url": "/Pozivnica/static/js/main.7ca65fcb.chunk.js"
   },
   {
     "revision": "1d1491370de9bb1100cf",
@@ -36,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Pozivnica/static/media/date_black_summer.c4342e79.PNG"
   },
   {
-    "revision": "d46ff672df8bb5692ba83650d9181e1a",
-    "url": "/Pozivnica/static/media/itinerary.d46ff672.png"
+    "revision": "6924fcbdbbec37c9c45564fbc6ca178f",
+    "url": "/Pozivnica/static/media/itinerary_2021.6924fcbd.png"
   },
   {
     "revision": "74894873c6007d808d7871b1d8c1fba6",
