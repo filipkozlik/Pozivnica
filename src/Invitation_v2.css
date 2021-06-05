@@ -14,11 +14,16 @@ body {
     "couple_name"
     "welcome_message"
     "spacer1"
-    "countdown"
+    "itinerary"
     "spacer2"
-    "response"
+    "couple_about"
     "spacer3"
-    "directions";
+    "response"
+    "spacer4"
+    "countdown"
+    "spacer5"
+    "contact"
+    "spacer6";
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -38,14 +43,20 @@ body {
 .welcome_message {
   grid-area: welcome_message;
 }
+.couple_about {
+  grid-area: couple_about;
+}
+.itinerary {
+  grid-area: itinerary;
+}
 .countdown {
   grid-area: countdown;
 }
 .response {
   grid-area: response;
 }
-.directions {
-  grid-area: directions;
+.contact {
+  grid-area: contact;
 }
 
 .spacer1 {
@@ -56,4 +67,13 @@ body {
 }
 .spacer3 {
   grid-area: spacer3;
+}
+.spacer4 {
+  grid-area: spacer4;
+}
+.spacer5 {
+  grid-area: spacer5;
+}
+.spacer6 {
+  grid-area: spacer6;
 }

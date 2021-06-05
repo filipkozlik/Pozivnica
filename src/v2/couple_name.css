@@ -1,18 +1,34 @@
 @supports (display: grid) {
   @media screen and (max-width: 1000px) {
-    .photo {
+    .couple_name_name {
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 60%;
+      width: 60vw;
+      pointer-events: none;
+    }
+    .couple_name_date {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 40vw;
+      pointer-events: none;
     }
   }
   @media screen and (min-width: 1000px) {
-    .photo {
+    .couple_name_name {
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 45%;
+      width: 60vw;
+      pointer-events: none;
+    }
+    .couple_name_date {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 40vw;
+      pointer-events: none;
     }
   }
 }

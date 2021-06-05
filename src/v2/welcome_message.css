@@ -5,6 +5,8 @@
       font-size: 20px;
       font-family: "American Typewriter", serif;
       -webkit-font-smoothing: antialiased;
+      user-select: none;
+      width: 90vw;
     }
   }
   @media screen and (min-width: 1000px) {
@@ -13,6 +15,7 @@
       font-size: 40px;
       font-family: "American Typewriter", serif;
       -webkit-font-smoothing: antialiased;
+      user-select: none;
     }
   }
 }

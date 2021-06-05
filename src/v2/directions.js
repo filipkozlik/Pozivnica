@@ -11,7 +11,7 @@ class Directions extends Component {
   render() {
     return (
       <button
-        className="animated bounce button_style"
+        className="animated bounce directions_button_style"
         onClick={this.show_directions}
       >
         Upute

@@ -1,0 +1,23 @@
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAbhi55TBonmkVvhiHq1lLEM0kH0S9ego0",
+        authDomain: "doloresfilipwedding-invite.firebaseapp.com",
+        databaseURL: "https://doloresfilipwedding-invite.firebaseio.com",
+        projectId: "doloresfilipwedding-invite",
+        storageBucket: "doloresfilipwedding-invite.appspot.com",
+        messagingSenderId: "604159876339",
+        appId: "1:604159876339:web:27c72b25750b817430eb86",
+        measurementId: "G-45H3V0J7HP"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>

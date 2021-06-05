@@ -1,0 +1,56 @@
+.contact_container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "contact_title contact_title"
+    "contact_dolores_title contact_dolores_number"
+    "contact_filip_title contact_filip_number";
+}
+
+.contact_container > div {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@supports (display: grid) {
+  @media screen and (max-width: 1000px) {
+    .contact_title_photo {
+      height: 10vw;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    .contact_title_photo {
+      height: 6vw;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+}
+
+.contact_title {
+  grid-area: contact_title;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.contact_dolores_title {
+  grid-area: contact_dolores_title;
+  user-select: none;
+  pointer-events: none;
+}
+.contact_dolores_number {
+  grid-area: contact_dolores_number;
+}
+.contact_filip_title {
+  grid-area: contact_filip_title;
+  user-select: none;
+  pointer-events: none;
+}
+.contact_filip_number {
+  grid-area: contact_filip_number;
+}

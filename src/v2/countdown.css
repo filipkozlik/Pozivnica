@@ -1,3 +1,26 @@
+@supports (display: grid) {
+  @media screen and (max-width: 1000px) {
+    .countdown_title_photo {
+      width: 40vw;
+      user-select: none;
+    }
+    .time_photo {
+      height: 5vw;
+      user-select: none;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    .countdown_title_photo {
+      width: 20vw;
+      user-select: none;
+    }
+    .time_photo {
+      height: 3vw;
+      user-select: none;
+    }
+  }
+}
+
 .countdown {
   display: grid;
   width: 95vw;
@@ -25,6 +48,8 @@
       align-self: center;
       justify-self: center;
       font-size: 20px;
+      user-select: none;
+      pointer-events: none;
     }
     .heart {
       width: 60%;
@@ -45,6 +70,8 @@
       align-self: center;
       justify-self: center;
       font-size: 40px;
+      user-select: none;
+      pointer-events: none;
     }
     .heart {
       width: 100%;

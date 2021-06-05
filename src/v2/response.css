@@ -1,24 +1,178 @@
-.button_style {
-  width: 150px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: rgba(247, 157, 179, 0.3);
-  border-color: rgba(247, 157, 179, 0.3);
-  font-size: 30px;
+@supports (display: grid) {
+  @media screen and (max-width: 1000px) {
+    .response_container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(5, auto);
+      grid-template-areas:
+        "question_coming question_coming toggle_button"
+        "question_number question_number question_number"
+        "minus_button number_of_people plus_button"
+        "send_button send_button send_button"
+        "warning warning warning";
+    }
+
+    .response_button_style {
+      width: 30vw;
+      height: 10vw;
+      border-radius: 5vw;
+      font-size: 15px;
+      background-color: rgba(0, 0, 0, 1);
+      border-color: rgba(0, 0, 0, 1);
+      color: rgba(255, 255, 255, 1);
+      outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 0;
+      user-select: none;
+    }
+
+    .response_button_style_disabled {
+      width: 30vw;
+      height: 10vw;
+      border-radius: 5vw;
+      font-size: 15px;
+      background-color: rgba(112, 106, 108, 0.3);
+      border-color: rgba(0, 0, 0, 1);
+      color: rgba(255, 255, 255, 1);
+      outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 0;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .response_button_style_round {
+      width: 15vw;
+      height: 15vw;
+      border-radius: 7.5vw;
+      background-color: rgba(255, 255, 255, 1);
+      border-color: rgba(0, 0, 0, 1);
+      border-width: 1.5px;
+      font-size: 5vw;
+      outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 0;
+      user-select: none;
+    }
+
+    .response_button_style_round_disabled {
+      width: 15vw;
+      height: 15vw;
+      border-radius: 7.5vw;
+      background-color: rgba(112, 106, 108, 0.3);
+      border-color: rgba(0, 0, 0, 1);
+      border-width: 1.5px;
+      font-size: 5vw;
+      outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 0;
+      user-select: none;
+    }
+
+    .response_container > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 25px;
+      user-select: none;
+    }
+
+    .response_question_photo {
+      height: 10vw;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    .response_container {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      grid-template-rows: repeat(4, auto);
+      grid-template-areas:
+        "question_coming . toggle_button ."
+        "question_number minus_button number_of_people plus_button"
+        "send_button send_button send_button send_button"
+        "warning warning warning warning";
+    }
+
+    .response_button_style {
+      width: 150px;
+      height: 50px;
+      border-radius: 25px;
+      font-size: 25px;
+      background-color: rgba(0, 0, 0, 1);
+      border-color: rgba(0, 0, 0, 1);
+      color: rgba(255, 255, 255, 1);
+      outline: none;
+      user-select: none;
+    }
+
+    .response_button_style_disabled {
+      width: 150px;
+      height: 50px;
+      border-radius: 25px;
+      font-size: 25px;
+      background-color: rgba(112, 106, 108, 0.3);
+      border-color: rgba(0, 0, 0, 1);
+      color: rgba(255, 255, 255, 1);
+      outline: none;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .response_button_style_round {
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      background-color: rgba(255, 255, 255, 1);
+      border-color: rgba(0, 0, 0, 1);
+      font-size: 30px;
+      outline: none;
+      user-select: none;
+    }
+
+    .response_button_style_round_disabled {
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      background-color: rgba(112, 106, 108, 0.3);
+      border-color: rgba(0, 0, 0, 1);
+      font-size: 30px;
+      outline: none;
+      user-select: none;
+    }
+
+    .response_container > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 25px;
+      user-select: none;
+    }
+
+    .response_question_photo {
+      height: 4vw;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
 }
 
-.button_style_round {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: rgba(247, 157, 179, 0.3);
-  border-color: rgba(247, 157, 179, 0.3);
-  font-size: 30px;
-  justify-content: right;
-  outline: none;
-}
-
-.animated {
+.response_animated {
   -webkit-animation-duration: 5s;
   animation-duration: 5s;
   -webkit-animation-fill-mode: both;
@@ -28,7 +182,7 @@
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
 }
-@-webkit-keyframes bounce {
+@-webkit-keyframes response_bounce {
   0% {
     -webkit-transform: translateY(0);
   }
@@ -42,7 +196,7 @@
     -webkit-transform: translateY(0);
   }
 }
-@keyframes bounce {
+@keyframes response_bounce {
   0% {
     -webkit-transform: translateY(0);
   }
@@ -56,26 +210,9 @@
     -webkit-transform: translateY(0);
   }
 }
-.bounce {
-  -webkit-animation-name: bounce;
-  animation-name: bounce;
-}
-
-.response_container {
-  display: grid;
-  row-gap: 10px;
-  column-gap: 10px;
-  grid-template-areas:
-    "question_coming . toggle_button ."
-    "question_number minus_button number_of_people plus_button"
-    ". send_button send_button .";
-}
-
-.response_container > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
+.response_bounce {
+  -webkit-animation-name: response_bounce;
+  animation-name: response_bounce;
 }
 
 .question_coming {
@@ -98,4 +235,14 @@
 }
 .send_button {
   grid-area: send_button;
+  margin-top: 20px;
+}
+.warning {
+  margin-top: 5px;
+  grid-area: warning;
+}
+.warning_text {
+  max-width: 50vw;
+  font-size: 15px;
+  user-select: none;
 }
