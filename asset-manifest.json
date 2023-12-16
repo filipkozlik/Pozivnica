@@ -1,27 +1,18 @@
 {
   "files": {
-    "main.css": "/Pozivnica/static/css/main.728ca6d4.chunk.css",
-    "main.js": "/Pozivnica/static/js/main.8ac74953.chunk.js",
-    "main.js.map": "/Pozivnica/static/js/main.8ac74953.chunk.js.map",
-    "runtime-main.js": "/Pozivnica/static/js/runtime-main.da1e768a.js",
-    "runtime-main.js.map": "/Pozivnica/static/js/runtime-main.da1e768a.js.map",
-    "static/js/2.e029da29.chunk.js": "/Pozivnica/static/js/2.e029da29.chunk.js",
-    "static/js/2.e029da29.chunk.js.map": "/Pozivnica/static/js/2.e029da29.chunk.js.map",
+    "main.css": "/Pozivnica/static/css/main.1aa516ae.css",
+    "main.js": "/Pozivnica/static/js/main.edd59120.js",
+    "static/media/D&F_054.jpg": "/Pozivnica/static/media/D&F_054.6be477390a7c42076fc5.jpg",
+    "static/media/couple_about_text.png": "/Pozivnica/static/media/couple_about_text.028995a72fd960127af1.png",
+    "static/media/itinerary.png": "/Pozivnica/static/media/itinerary.082c6e0bfbaeeb836d37.png",
+    "static/media/kissing_couple_1.png": "/Pozivnica/static/media/kissing_couple_1.42f13caf4ddc41020614.png",
+    "static/media/date_black_summer.PNG": "/Pozivnica/static/media/date_black_summer.8791dd73865e17a2d261.PNG",
     "index.html": "/Pozivnica/index.html",
-    "precache-manifest.10f7bda3c41bf5cbca2cb5b73b26b54c.js": "/Pozivnica/precache-manifest.10f7bda3c41bf5cbca2cb5b73b26b54c.js",
-    "service-worker.js": "/Pozivnica/service-worker.js",
-    "static/css/main.728ca6d4.chunk.css.map": "/Pozivnica/static/css/main.728ca6d4.chunk.css.map",
-    "static/js/2.e029da29.chunk.js.LICENSE.txt": "/Pozivnica/static/js/2.e029da29.chunk.js.LICENSE.txt",
-    "static/media/D&F_054.jpg": "/Pozivnica/static/media/D&F_054.6d5eadf7.jpg",
-    "static/media/couple_about_text.png": "/Pozivnica/static/media/couple_about_text.43bc85f8.png",
-    "static/media/date_black_summer.PNG": "/Pozivnica/static/media/date_black_summer.c4342e79.PNG",
-    "static/media/itinerary_2021.png": "/Pozivnica/static/media/itinerary_2021.6924fcbd.png",
-    "static/media/kissing_couple_1.png": "/Pozivnica/static/media/kissing_couple_1.74894873.png"
+    "main.1aa516ae.css.map": "/Pozivnica/static/css/main.1aa516ae.css.map",
+    "main.edd59120.js.map": "/Pozivnica/static/js/main.edd59120.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.da1e768a.js",
-    "static/js/2.e029da29.chunk.js",
-    "static/css/main.728ca6d4.chunk.css",
-    "static/js/main.8ac74953.chunk.js"
+    "static/css/main.1aa516ae.css",
+    "static/js/main.edd59120.js"
   ]
 }
