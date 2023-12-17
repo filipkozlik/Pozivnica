@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Pozivnica/static/css/main.446ba106.css",
-    "main.js": "/Pozivnica/static/js/main.c05b1556.js",
+    "main.css": "/Pozivnica/static/css/main.f9941343.css",
+    "main.js": "/Pozivnica/static/js/main.c9452682.js",
     "static/media/line_flip.png": "/Pozivnica/static/media/line_flip.ac1809c79f9e8c753468.png",
     "static/media/D&F_054.jpg": "/Pozivnica/static/media/D&F_054.6be477390a7c42076fc5.jpg",
     "static/media/couple_about_text.png": "/Pozivnica/static/media/couple_about_text.028995a72fd960127af1.png",
     "static/media/itinerary.png": "/Pozivnica/static/media/itinerary.082c6e0bfbaeeb836d37.png",
     "static/media/line.png": "/Pozivnica/static/media/line.39694947fdb7f99a6e55.png",
     "index.html": "/Pozivnica/index.html",
-    "main.446ba106.css.map": "/Pozivnica/static/css/main.446ba106.css.map",
-    "main.c05b1556.js.map": "/Pozivnica/static/js/main.c05b1556.js.map"
+    "main.f9941343.css.map": "/Pozivnica/static/css/main.f9941343.css.map",
+    "main.c9452682.js.map": "/Pozivnica/static/js/main.c9452682.js.map"
   },
   "entrypoints": [
-    "static/css/main.446ba106.css",
-    "static/js/main.c05b1556.js"
+    "static/css/main.f9941343.css",
+    "static/js/main.c9452682.js"
   ]
 }
