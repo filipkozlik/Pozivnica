@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./spacer_2.css";
+import "./spacer.css";
 import separator from "../resources/images/line.png";
 import separator_flip from "../resources/images/line_flip.png";
 

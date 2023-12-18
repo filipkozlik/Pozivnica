@@ -1,7 +1,12 @@
-html,
-body {
+:root {
+  background: rgb(219, 228, 251);
+}
+
+html, body {
   margin: 0;
   padding: 0;
+  background: rgb(219, 228, 251);
+  height: 100%;
 }
 
 .site {

@@ -1,0 +1,51 @@
+.contact_container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    "contact_bride_title contact_bride_number"
+    "contact_groom_title contact_groom_number";
+}
+
+.contact_container > div {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@supports (display: grid) {
+  @media screen and (max-width: 1000px) {
+    .contact_title {
+      text-align: center;
+      font-size: 30px;
+      font-family: "Dancing Script", cursive;
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    .contact_title {
+      text-align: center;
+      font-size: 100px;
+      font-family: "Dancing Script", cursive; 
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+    }
+  }
+}
+
+.contact_bride_title {
+  grid-area: contact_bride_title;
+  user-select: none;
+  pointer-events: none;
+}
+.contact_bride_number {
+  grid-area: contact_bride_number;
+}
+.contact_groom_title {
+  grid-area: contact_groom_title;
+  user-select: none;
+  pointer-events: none;
+}
+.contact_groom_number {
+  grid-area: contact_groom_number;
+}

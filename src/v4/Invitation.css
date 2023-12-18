@@ -1,15 +1,36 @@
-html,
-body {
+:root {
+  background: rgb(219, 228, 251);
+}
+
+html, body {
   margin: 0;
   padding: 0;
+  background: rgb(219, 228, 251);
+  height: 100%;
+  width: 100%;
 }
 
 .site {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: repeat(6, auto);
+  grid-template-rows: repeat(9, auto);
   row-gap: 50px;
   grid-template-areas:
+    "spacer1"
+    "header"
+    "spacer2"
+    "welcome_message"
+    "spacer3"
+    "itinerary"
+    "spacer4"
+    "couple_about"
+    "spacer5"
+    "contact"
+    "spacer6";
+  /* margin: 20px 20px; */
+  /* margin-top: 10px;
+  margin-bottom: 10px; */
+  /* grid-template-areas:
     "spacer1"
     "header"
     "spacer2"
@@ -24,9 +45,7 @@ body {
     "countdown"
     "spacer7"
     "contact"
-    "spacer8";
-  margin-top: 30px;
-  margin-bottom: 30px;
+    "spacer8"; */
 }
 
 .site > * {

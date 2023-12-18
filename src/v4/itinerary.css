@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+@supports (display: grid) {
+  @media screen and (max-width: 1000px) {
+    .itinerary_photo {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 75vw;
+      user-select: none;
+      pointer-events: none;
+    }
+    .itinerary_button_style {
+      width: 30vw;
+      height: 10vw;
+      border-radius: 5vw;
+      font-size: 15px;
+      background-color: rgba(0, 0, 0, 1);
+      border-color: rgba(0, 0, 0, 1);
+      color: rgba(255, 255, 255, 1);
+      outline: none;
+      user-select: none;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    .itinerary_photo {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50vw;
+      user-select: none;
+      pointer-events: none;
+    }
+    .itinerary_button_style {
+      width: 150px;
+      height: 50px;
+      border-radius: 25px;
+      font-size: 25px;
+      background-color: rgba(0, 0, 0, 1);
+      border-color: rgba(0, 0, 0, 1);
+      color: rgba(255, 255, 255, 1);
+      outline: none;
+      user-select: none;
+    }
+  }
+}
+
+.itinerary {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    "itinerary_plan"
+    "directions_plan";
+}
+
+.itinerary > div {
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.itinerary_plan {
+  grid-area: itinerary_plan;
+}
+.directions_plan {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: directions_plan;
+}
+
+.itinerary_button_animated {
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+@-webkit-keyframes itinerary_button_bounce {
+  0% {
+    -webkit-transform: translateY(0);
+  }
+  2% {
+    -webkit-transform: translateY(-5px);
+  }
+  4% {
+    -webkit-transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes itinerary_button_bounce {
+  0% {
+    -webkit-transform: translateY(0);
+  }
+  2% {
+    -webkit-transform: translateY(-5px);
+  }
+  4% {
+    -webkit-transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+.itinerary_button_bounce {
+  -webkit-animation-name: itinerary_button_bounce;
+  animation-name: itinerary_button_bounce;
+}
+
+
+
+
+@supports (display: grid) {
+  @media screen and (max-width: 1000px) {
+    .itinerary_imgs {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 20vw;
+      user-select: none;
+      pointer-events: none;
+    }
+    .itinerary_txt_title {
+      font-family: "Dancing Script", cursive; 
+      font-size: 20px; 
+      margin: 10px 10px; 
+      letter-spacing: 6px; 
+      font-weight: bold;
+      text-align: center;
+    }
+    .itinerary_txt {
+      font-family: "Dancing Script", cursive; 
+      font-size: 15px; 
+      margin: 10px 10px; 
+      letter-spacing: 6px; 
+      font-weight: 200;
+      text-align: center;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    .itinerary_imgs {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 20vw;
+      user-select: none;
+      pointer-events: none;
+    }
+    .itinerary_txt_title {
+      font-family: "Dancing Script", cursive; 
+      font-size: 60px; 
+      margin: 10px 50px; 
+      letter-spacing: 10px; 
+      font-style: normal;
+      font-weight: bold;
+      text-align: center;
+    }
+    .itinerary_txt {
+      font-family: "Dancing Script", cursive; 
+      font-size: 40px; 
+      margin: 10px 50px; 
+      letter-spacing: 10px; 
+      font-style: normal;
+      font-weight: 200;
+      text-align: center;
+    }
+  }
+}
+
+.itinerary_new {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(5, auto);
+  padding: 10px;
+  grid-template-areas:
+    "arrive_img arrive_txt"
+    "church_img church_txt"
+    "venue_img venue_txt"
+    "party_img party_txt"
+    "directions_plan directions_plan";
+}
+
+.itinerary_new > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.itinerary_txt_container {
+  display: flex;
+  flex-direction: column;
+}

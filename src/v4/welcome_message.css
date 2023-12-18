@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+@supports (display: grid) {
+  @media screen and (max-width: 1000px) {
+    .text {
+      text-align: center;
+      font-size: 30px;
+      font-family: "Dancing Script", cursive;
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+      width: 90vw;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    .text {
+      text-align: center;
+      font-size: 60px;
+      font-family: "Dancing Script", cursive; 
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+      width: 90vw;
+    }
+  }
+}

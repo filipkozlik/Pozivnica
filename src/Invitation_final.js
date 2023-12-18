@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import "./Invitation_v2.css";
+import "./Invitation_final.css";
 
-import Header from "./v2/header";
-import WelcomeMessage from "./v2/welcome_message_1";
-import Countdown from "./v2/countdown";
-import Response from "./v2/response";
-import Spacer from "./v2/spacer_2";
-import Itinerary from "./v2/itinerary";
-import Contact from "./v2/contact";
-import CoupleAbout from "./v2/couple_about";
+import Header from "./v2/header.js";
+import WelcomeMessage from "./v2/welcome_message_1.js";
+import Countdown from "./v2/countdown.js";
+import Response from "./v2/response.js";
+import Spacer from "./v2/spacer_2.js";
+import Itinerary from "./v2/itinerary.js";
+import Contact from "./v2/contact.js";
+import CoupleAbout from "./v2/couple_about.js";
 
 import { db } from './v2/firebase_try.js' 
 import { onValue, ref } from 'firebase/database';

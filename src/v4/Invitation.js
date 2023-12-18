@@ -1,16 +1,17 @@
 import React, { Component } from "react";
-import "./Invitation_v2.css";
+import "./Invitation.css";
 
-import Header from "./v2/header";
-import WelcomeMessage from "./v2/welcome_message_1";
-import Countdown from "./v2/countdown";
-import Response from "./v2/response";
-import Spacer from "./v2/spacer_2";
-import Itinerary from "./v2/itinerary";
-import Contact from "./v2/contact";
-import CoupleAbout from "./v2/couple_about";
+import Spacer from "./spacer.js";
 
-import { db } from './v2/firebase_try.js' 
+import Header from "./header.js";
+import WelcomeMessage from "./welcome_message.js";
+import Itinerary from "./itinerary.js";
+import CoupleAbout from "./couple_about.js";
+import Response from "./response.js";
+import Countdown from "./countdown.js";
+import Contact from "./contact.js";
+
+import { db } from './firebase_try.js' 
 import { onValue, ref } from 'firebase/database';
 
 class App extends Component {
@@ -23,7 +24,7 @@ class App extends Component {
       ready: false,
     });
     
-    const query = ref(db, "/" + wedding);
+    const query = ref(db, "/" + wedding + "/guests");
     onValue(query, (snapshot) => {
       if(snapshot.exists()) {
         const guests = snapshot.val();
@@ -32,7 +33,7 @@ class App extends Component {
             ready: true,
           });
       }
-      });
+    });
   }
 
   render() {
@@ -40,6 +41,39 @@ class App extends Component {
       return (
         <div className="site">
           <div className="header">
+            <Header />
+          </div>
+          <div className="welcome_message">
+            <WelcomeMessage info={this.state.info} />
+          </div>
+          <div className="itinerary">
+            <Itinerary />
+          </div>
+          <div className="couple_about">
+            <CoupleAbout />
+          </div>
+          <div className="contact">
+            <Contact />
+          </div>
+          <div className="spacer1">
+            <Spacer flip="false" />
+          </div>
+          <div className="spacer2">
+            <Spacer flip="true" />
+          </div>
+          <div className="spacer3">
+            <Spacer flip="false" />
+          </div>
+          <div className="spacer4">
+            <Spacer flip="true" />
+          </div>
+          <div className="spacer5">
+            <Spacer flip="false" />
+          </div>
+          <div className="spacer6">
+            <Spacer flip="true" />
+          </div>
+          {/* <div className="header">
             <Header />
           </div>
           <div className="welcome_message">
@@ -83,7 +117,7 @@ class App extends Component {
           </div>
           <div className="spacer8">
             <Spacer flip="true" />
-          </div>
+          </div>*/}
         </div>
       );
     } else {

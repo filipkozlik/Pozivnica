@@ -1,0 +1,39 @@
+@supports (display: grid) {
+    @media screen and (max-width: 1000px) {
+      .title {
+        text-align: center;
+        font-size: 30px;
+        font-family: "Dancing Script", cursive;
+        -webkit-font-smoothing: antialiased;
+        user-select: none;
+        font-weight: bold;
+      }
+      .text {
+        font-family: "Dancing Script", cursive; 
+        font-size: 15px; 
+        margin: 10px 10px; 
+        letter-spacing: 6px; 
+        font-weight: 200;
+        text-align: center;
+      }
+    }
+    @media screen and (min-width: 1000px) {
+      .title {
+        text-align: center;
+        font-size: 100px;
+        font-family: "Dancing Script", cursive; 
+        -webkit-font-smoothing: antialiased;
+        user-select: none;
+        font-weight: bold;
+      }
+      .text {
+        font-family: "Dancing Script", cursive; 
+        font-size: 40px; 
+        margin: 10px 50px; 
+        letter-spacing: 10px; 
+        font-style: normal;
+        font-weight: 200;
+        text-align: center;
+      }
+    }
+  }
