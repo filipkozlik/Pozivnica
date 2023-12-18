@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Pozivnica/static/css/main.c0e79bbf.css",
-    "main.js": "/Pozivnica/static/js/main.21a175bd.js",
+    "main.css": "/Pozivnica/static/css/main.1dde69f2.css",
+    "main.js": "/Pozivnica/static/js/main.09b8218e.js",
     "static/media/line_flip.png": "/Pozivnica/static/media/line_flip.ac1809c79f9e8c753468.png",
     "static/media/party2.png": "/Pozivnica/static/media/party2.baec42af7c818262fb4c.png",
     "static/media/church2.png": "/Pozivnica/static/media/church2.98bcceda5aa55446a754.png",
@@ -10,11 +10,11 @@
     "static/media/line.png": "/Pozivnica/static/media/line.39694947fdb7f99a6e55.png",
     "static/media/venue.png": "/Pozivnica/static/media/venue.0f487301d5fd0426a2a5.png",
     "index.html": "/Pozivnica/index.html",
-    "main.c0e79bbf.css.map": "/Pozivnica/static/css/main.c0e79bbf.css.map",
-    "main.21a175bd.js.map": "/Pozivnica/static/js/main.21a175bd.js.map"
+    "main.1dde69f2.css.map": "/Pozivnica/static/css/main.1dde69f2.css.map",
+    "main.09b8218e.js.map": "/Pozivnica/static/js/main.09b8218e.js.map"
   },
   "entrypoints": [
-    "static/css/main.c0e79bbf.css",
-    "static/js/main.21a175bd.js"
+    "static/css/main.1dde69f2.css",
+    "static/js/main.09b8218e.js"
   ]
 }
