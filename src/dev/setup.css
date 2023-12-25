@@ -30,9 +30,10 @@ input[type=submit]:hover {
 }
 
 .add_guest_container {
+    background-color: whitesmoke;
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(7, auto);
     width: 100%;
     grid-template-areas:
       "label_description description"
@@ -40,8 +41,14 @@ input[type=submit]:hover {
       "label_addressing label_addressing"
       "addressing addressing_name"
       "button_add button_add"
-      "todo_list todo_list";
+      "todo_list todo_list"
+      "button_save button_save";
   }
+
+  .add_guest_container_div {
+    height: 50px;
+  }
+
   .label_description {
     grid-area: label_description;
   }
@@ -68,6 +75,10 @@ input[type=submit]:hover {
   }
   .todo_list {
     grid-area: todo_list;
+    height: 100%;
+  }
+  .button_save {
+    grid-area: button_save;
   }
 
   .align_left {
@@ -110,13 +121,9 @@ input[type=submit]:hover {
     user-select: none;
   }
   
-  .add_guest_container > div {
-    border-radius: 10px;
-    border-color: black;
-    border-width: 2px;
-    border-style: double;
+  /* .add_guest_container > div {
     height: 50px;
-  }
+  } */
   
   @supports (display: grid) {
     @media screen and (max-width: 1000px) {

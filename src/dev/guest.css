@@ -7,3 +7,46 @@
     color: #888;
     text-decoration: line-through;
 }
+
+.input_field {
+    width: 100px;
+    height: 50px;
+}
+  
+@supports (display: grid) {
+    @media screen and (max-width: 1000px) {
+        .guest_row_container {
+            border-radius: 10px;
+            border-color: black;
+            border-width: 5px;
+            border-style: double;
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: repeat(3, auto);
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+            grid-template-areas:
+              "label_description description"
+              "label_number_of_people number_of_people"
+              "label_addressing addressing_name";
+        }
+    }
+    @media screen and (min-width: 1000px) {
+        .guest_row_container {
+            border-radius: 10px;
+            border-color: black;
+            border-width: 5px;
+            border-style: solid;
+            background-color: lightblue;
+            display: grid;
+            grid-template-columns: repeat(6, auto);
+            grid-template-rows: repeat(1, auto);
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+            grid-template-areas:
+              "label_description description label_number_of_people number_of_people label_addressing addressing_name";
+        }
+    }
+}
