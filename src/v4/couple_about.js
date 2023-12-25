@@ -42,8 +42,8 @@ class CoupleAbout extends Component {
             className="couple_about_photo_of_us couple_about_photo_animated couple_about_photo_bounce"
           />
         </div>
-        <div className="couple_about_text_photo text">{this.state.couple_about}
-          {/* <img src={couple_about_text} className="couple_about_text_photo" /> */}
+        <div className="couple_about_text_box">
+          <div className="couple_about_text text">{this.state.couple_about}</div>
         </div>
       </div>
     );

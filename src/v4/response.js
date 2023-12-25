@@ -5,7 +5,10 @@ import "./checkbox.css";
 import cya from "../resources/images/cya.png";
 import how_many from "../resources/images/how_many.png";
 
-import firebase from "./firebase.js";
+// import firebase from "./firebase.js";
+
+import { db } from './firebase_try.js' 
+import { onValue, ref, set, update } from 'firebase/database';
 
 class Response extends Component {
   static propTypes = {
@@ -53,28 +56,29 @@ class Response extends Component {
   }
 
   send_response(event) {
-    const templateId = "template_BfVxOubC_clone";
+    // const templateId = "template_BfVxOubC_clone";
 
-    this.send_email(templateId, {
-      message_html: this.state.is_arriving ? "DA" : "NE",
-      number_of_guests: this.state.number_of_people,
-      guest_name: this.state.name,
-    });
+    // this.send_email(templateId, {
+    //   message_html: this.state.is_arriving ? "DA" : "NE",
+    //   number_of_guests: this.state.number_of_people,
+    //   guest_name: this.state.name,
+    // });
     this.setState({
       response_enabled: false,
     });
-    // firebase
-    //   .database()
-    //   .ref(this.state.invite + "/responded")
-    //   .set(true);
-    // firebase
-    //   .database()
-    //   .ref(this.state.invite + "/coming")
-    //   .set(this.state.is_arriving);
-    // firebase
-    //   .database()
-    //   .ref(this.state.invite + "/number")
-    //   .set(this.state.number_of_people);
+
+    let search = window.location.search;
+    let params = new URLSearchParams(search);
+    let wedding = params.get("wedding");
+    let invite = params.get("invite");
+    const invite_access = "/" + wedding + "/guests/" + invite;
+
+    const updates = {};
+    updates[invite_access + "/responded"] = true;
+    updates[invite_access + "/coming"] = this.state.is_arriving;
+    updates[invite_access + "/number"] = this.state.number_of_people;
+
+    update(ref(db), updates);
   }
 
   send_email(templateId, variables) {

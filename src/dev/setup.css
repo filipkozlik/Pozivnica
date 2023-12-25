@@ -1,0 +1,159 @@
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.add_dialog {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.add_guest_container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(4, auto);
+    width: 100%;
+    grid-template-areas:
+      "label_description description"
+      "label_number_of_people number_of_people"
+      "label_addressing label_addressing"
+      "addressing addressing_name"
+      "button_add button_add"
+      "todo_list todo_list";
+  }
+  .label_description {
+    grid-area: label_description;
+  }
+  .description {
+    grid-area: description;
+  }
+  .label_number_of_people {
+    grid-area: label_number_of_people;
+  }
+  .number_of_people {
+    grid-area: number_of_people;
+  }
+  .label_addressing {
+    grid-area: label_addressing;
+  }
+  .addressing {
+    grid-area: addressing;
+  }
+  .addressing_name {
+    grid-area: addressing_name;
+  }
+  .button_add {
+    grid-area: button_add;
+  }
+  .todo_list {
+    grid-area: todo_list;
+  }
+
+  .align_left {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+  .align_right {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  }
+  .align_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .addressing_modif {
+    width: 100px;
+  }
+  .input_field {
+    width: 300px;
+    height: 50px;
+  }
+  .input_number {
+    width: 50px;
+    height: 50px;
+  }
+
+  .button_style {
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 1);
+    border-color: rgba(0, 0, 0, 1);
+    color: rgba(255, 255, 255, 1);
+    outline: none;
+    user-select: none;
+  }
+  
+  .add_guest_container > div {
+    border-radius: 10px;
+    border-color: black;
+    border-width: 2px;
+    border-style: double;
+    height: 50px;
+  }
+  
+  @supports (display: grid) {
+    @media screen and (max-width: 1000px) {
+      .contact_title {
+        text-align: center;
+        font-size: 30px;
+        font-family: "Dancing Script", cursive;
+        -webkit-font-smoothing: antialiased;
+        user-select: none;
+      }
+    }
+    @media screen and (min-width: 1000px) {
+      .contact_title {
+        text-align: center;
+        font-size: 100px;
+        font-family: "Dancing Script", cursive; 
+        -webkit-font-smoothing: antialiased;
+        user-select: none;
+      }
+    }
+  }
+  
+  .contact_bride_title {
+    grid-area: contact_bride_title;
+    user-select: none;
+    pointer-events: none;
+  }
+  .contact_bride_number {
+    grid-area: contact_bride_number;
+  }
+  .contact_groom_title {
+    grid-area: contact_groom_title;
+    user-select: none;
+    pointer-events: none;
+  }
+  .contact_groom_number {
+    grid-area: contact_groom_number;
+  }
+  
+

@@ -13,7 +13,7 @@
       user-select: none;
       pointer-events: none;
     }
-    .couple_about_text_photo {
+    .couple_about_text {
       display: block;
       margin-left: auto;
       margin-right: auto;
@@ -36,13 +36,26 @@
       user-select: none;
       pointer-events: none;
     }
-    .couple_about_text_photo {
+    .couple_about_text {
       display: block;
       margin-left: auto;
       margin-right: auto;
       width: 40vw;
       user-select: none;
       pointer-events: none;
+    }
+    .couple_about_text_box {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 45vw;
+      user-select: none;
+      pointer-events: none;
+      background: white;
+      border-width: 2px;
+      border-color: black;
+      padding-top: 2px;
+      padding-bottom: 2px;
     }
   }
 }
@@ -71,10 +84,10 @@
 .couple_about_photo {
   grid-area: couple_about_photo;
 }
-.couple_about_text {
+/* .couple_about_text {
   margin-top: 15px;
   grid-area: couple_about_text;
-}
+} */
 
 .couple_about_photo_animated {
   -webkit-animation-duration: 5s;

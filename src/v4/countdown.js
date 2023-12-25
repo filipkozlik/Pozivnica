@@ -9,16 +9,53 @@ import dana from "../resources/images/dana.png";
 import minuta from "../resources/images/minuta.png";
 import minute from "../resources/images/minute.png";
 
+import { db } from './firebase_try.js' 
+import { onValue, ref } from 'firebase/database';
+
 class Countdown extends Component {
+  read_database() {
+    let search = window.location.search;
+    let params = new URLSearchParams(search);
+    let wedding = params.get("wedding");
+    this.setState({
+      ready: false,
+    });
+    
+    const query = ref(db, "/" + wedding + "/info");
+    onValue(query, (snapshot) => {
+      if(snapshot.exists()) {
+        const info = snapshot.val();
+        const date_split = info["date"].split('.');
+        const date = date_split[2] + "-" + date_split[1] + "-" + date_split[0];
+        const time = info["itinerary"]["start_time"] + ":00";
+        const time_split = info["itinerary"]["start_time"].split(":");
+        const wedding_date = new Date(date_split[2], date_split[1], date_split[0], time_split[0], time_split[1])
+        wedding_date.toLocaleString('en-US', { timeZone: 'UTC' })
+        this.setState({
+          wedding_date: wedding_date,
+        });
+        this.refreshRemainingTime();
+        this.refresh_countdown = setInterval(
+          this.refreshRemainingTime.bind(this),
+          15000
+        );
+      }
+    });
+  }
+
   state = {
-    wedding_date: Date.parse("7 Aug 2021 19:00:00 GMT+0100"),
+    // wedding_date: Date.parse("7 Aug 2021 19:00:00 GMT+0100"),
+    wedding_date: Date.parse(new Date()),
     remaining_days: 0,
     remaining_hours: 0,
     remaining_minutes: 0,
   };
 
   refreshRemainingTime() {
-    let remaining_time = this.state.wedding_date - Date.parse(new Date() + " GMT+0100");
+    const current = new Date();
+    current.toLocaleString('en-US', { timeZone: 'UTC' })
+    // let remaining_time = this.state.wedding_date - Date.parse(new Date() + " GMT+0100");
+    let remaining_time = Date.parse(this.state.wedding_date) - Date.parse(current);
     this.setState({
       remaining_days: Math.floor(remaining_time / 1000 / 60 / 60 / 24),
       remaining_hours: Math.floor((remaining_time / 1000 / 60 / 60) % 24),
@@ -27,11 +64,7 @@ class Countdown extends Component {
   }
 
   componentDidMount() {
-    this.refreshRemainingTime();
-    this.refresh_countdown = setInterval(
-      this.refreshRemainingTime.bind(this),
-      15000
-    );
+    this.read_database();
   }
 
   render() {
