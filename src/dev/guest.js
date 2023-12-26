@@ -77,6 +77,7 @@ function TodoItem({ task, deleteTask, toggleCompleted }) {
                 <img
                     src={btn_delete}
                     className="btn"
+                    onClick={() => { deleteTask(task.id); }}
                     // className="couple_about_photo_of_us couple_about_photo_animated couple_about_photo_bounce"
                 />
             </div>

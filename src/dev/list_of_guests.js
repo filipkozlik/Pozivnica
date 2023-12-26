@@ -4,7 +4,7 @@ import {v4 as uuidv4} from 'uuid';
 import TodoItem from "./guest.js";
 
 import { db } from '../v4/firebase_try.js';
-import { onValue, ref, update, set, push, child } from 'firebase/database';
+import { onValue, ref, update, set, push, child, remove } from 'firebase/database';
 
 class TodoList extends React.Component {
     constructor(props) {
@@ -15,6 +15,16 @@ class TodoList extends React.Component {
             tasks: [],
             text: ''
         };
+    }
+
+    async delete_guest_from_db(uuid) {
+        let search = window.location.search;
+        let params = new URLSearchParams(search);
+        let wedding = params.get("wedding");
+        
+        const invite_reference = await ref(db, "/" + wedding + "/guests/" + uuid);
+        // const getBlog = await get(invite_reference);
+        await remove(invite_reference);
     }
 
     is_save_button_visible() {
@@ -191,7 +201,7 @@ class TodoList extends React.Component {
                 return <TodoItem
                     key={task.id} 
                     task={task}
-                    deleteTask={this.deleteTask}
+                    deleteTask={this.delete_guest_from_db}
                     toggleCompleted={this.toggleCompleted}/>
             })}
             {this.is_save_button_visible?.() ?
