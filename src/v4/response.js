@@ -31,7 +31,7 @@ class Response extends Component {
       is_arriving: props.info.coming,
       input_visual: "response_container",
       are_ya_coming: "Vidimo se!",
-      number_of_people: props.info.number,
+      number_of_people: props.info.responded ? props.info.confirmed_number : props.info.expected_number,
       minus_button_enabled: false,
       plus_button_enabled: !props.info.responded,
       invite: props.info.hash,
@@ -76,7 +76,7 @@ class Response extends Component {
     const updates = {};
     updates[invite_access + "/responded"] = true;
     updates[invite_access + "/coming"] = this.state.is_arriving;
-    updates[invite_access + "/number"] = this.state.number_of_people;
+    updates[invite_access + "/confirmed_number"] = this.state.number_of_people;
 
     update(ref(db), updates);
   }
@@ -102,16 +102,16 @@ class Response extends Component {
   }
 
   increase_people() {
-    // always enable minus button when number increased
-    this.setState({
-      minus_button_enabled: (this.state.minus_button_enabled = true),
-    });
-    // disabled plus button if number is 9
-    if (this.state.number_of_people === 8) {
-      this.setState({
-        plus_button_enabled: (this.state.plus_button_enabled = false),
-      });
-    }
+    // // always enable minus button when number increased
+    // this.setState({
+    //   minus_button_enabled: (this.state.minus_button_enabled = true),
+    // });
+    // // disabled plus button if number is 9
+    // if (this.state.number_of_people === 8) {
+    //   this.setState({
+    //     plus_button_enabled: (this.state.plus_button_enabled = false),
+    //   });
+    // }
     // allow no more then 10 people
     if (this.state.number_of_people < 9) {
       this.setState({
@@ -121,16 +121,16 @@ class Response extends Component {
   }
 
   decrease_people() {
-    // always enable plus button when number decreased
-    this.setState({
-      plus_button_enabled: (this.state.plus_button_enabled = true),
-    });
-    // disabled minus button if number is 1
-    if (this.state.number_of_people === 1) {
-      this.setState({
-        minus_button_enabled: (this.state.minus_button_enabled = false),
-      });
-    }
+    // // always enable plus button when number decreased
+    // this.setState({
+    //   plus_button_enabled: (this.state.plus_button_enabled = true),
+    // });
+    // // disabled minus button if number is 1
+    // if (this.state.number_of_people === 1) {
+    //   this.setState({
+    //     minus_button_enabled: (this.state.minus_button_enabled = false),
+    //   });
+    // }
     // allow more then 0 people
     if (this.state.number_of_people > 0) {
       this.setState({
@@ -212,24 +212,26 @@ class Response extends Component {
         </button>
       );
 
-      if (this.state.minus_button_enabled) {
+      // if (this.state.minus_button_enabled) {
+      if (this.state.response_enabled && this.state.number_of_people > 0) {
         minus_button_html = (
           <button
             className="response_button_style_round"
             onClick={this.decrease_people}
-            onDoubleClick={this.decrease_people}
+            // onDoubleClick={this.decrease_people}
             selectTextOnFocus={false}
           >
             -
           </button>
         );
       }
-      if (this.state.plus_button_enabled) {
+      // if (this.state.plus_button_enabled) {
+      if (this.state.response_enabled &&this.state.number_of_people < 9) {
         plus_button_html = (
           <button
             className="response_button_style_round"
             onClick={this.increase_people}
-            onDoubleClick={this.increase_people}
+            // onDoubleClick={this.increase_people}
             selectTextOnFocus={false}
           >
             +

@@ -48,7 +48,7 @@ class Setup extends Component {
                 onChange={e => this.setState({description: e.target.value})}></input>
         </div>
         <div className="label_number_of_people align_right add_guest_container_div">
-            <label for="label_number_of_people">Očekivani broj ljudi:</label>
+            <label for="label_number_of_people">Broj ljudi:</label>
         </div>
         <div className="number_of_people align_left add_guest_container_div">
             <input required className="input_number" type="number" id="number_of_people" name="number_of_people" placeholder="2" min="1"

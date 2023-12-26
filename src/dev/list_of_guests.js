@@ -24,6 +24,10 @@ class TodoList extends React.Component {
         return true;
     }
 
+    check_if_guest_in_table(uuid) {
+        return this.state.uuids_in_db.includes(uuid);
+    }
+
     componentWillMount() {
         this.get_guests_from_db();
     }
@@ -37,10 +41,18 @@ class TodoList extends React.Component {
         onValue(query, (snapshot) => {
           if(snapshot.exists()) {
             const guests = snapshot.val();
-            this.setState({tasks: []});
-            this.setState({uuids_in_db: []});
+            const guest_db_key = Object.keys(guests);
             for (const [key, value] of Object.entries(guests)) {
-                this.add_user_from_db(value);
+                if(!this.check_if_guest_in_table(value.hash)) {
+                    this.add_user_from_db(value);
+                }
+            }
+            const table_size = this.state.tasks.length;
+            for (let table_i in this.state.tasks) {
+                const table_guest_uuid = this.state.tasks.at(table_size - table_i - 1).id;
+                if (!guest_db_key.includes(table_guest_uuid)) {
+                    this.deleteTask(table_guest_uuid);
+                }
             }
           }
         });
@@ -49,7 +61,7 @@ class TodoList extends React.Component {
     add_user_from_db(user) {
         const db_user = {
             description: user.name,
-            number_of_people: user.number,
+            number_of_people: user.expected_number,
             addressing_name: user.title,
             id: user.hash,
         };
@@ -59,6 +71,30 @@ class TodoList extends React.Component {
 
     get_user_by_uuid(uuid) {
         return this.state.tasks.filter(task => task.id === uuid)[0];
+    }
+
+    async add_new_guest_to_db(guest_info) {
+        let search = window.location.search;
+        let params = new URLSearchParams(search);
+        let wedding = params.get("wedding");
+        const invite_location = "/" + wedding + "/guests/";
+        
+        const updates = {};
+            
+        const postData = {
+            responded: false,
+            coming: false,
+            expected_number: parseInt(guest_info.number_of_people),
+            confirmed_number: parseInt(guest_info.number_of_people),
+            hash: guest_info.id,
+            title: guest_info.addressing_name,
+            name: guest_info.description,
+            single_person: parseInt(guest_info.number_of_people) <= 1
+        };
+
+        updates[invite_location + guest_info.id] = postData;
+
+        await update(ref(db), updates);
     }
 
     async add_new_guests_to_db() {
@@ -78,7 +114,8 @@ class TodoList extends React.Component {
                 number: guest_info.number_of_people,
                 hash: guest_info.id,
                 title: guest_info.addressing_name,
-                name: guest_info.description
+                name: guest_info.description,
+                single_person: guest_info.number_of_people > 1
             };
 
             updates[invite_location + guest_info.id] = postData;
@@ -91,36 +128,6 @@ class TodoList extends React.Component {
         this.setState({tasks: []});
         this.setState({uuids_new: []});
         this.get_guests_from_db();
-    }
-
-    handle_guest_add(description, number_of_people, addressing, addressing_name) {
-        let search = window.location.search;
-        let params = new URLSearchParams(search);
-        let wedding = params.get("wedding");
-        this.setState({
-          ready: false,
-        });
-        
-        const query = ref(db, "/" + wedding + "/guests");
-        onValue(query, (snapshot) => {
-          if(snapshot.exists()) {
-            const guests = snapshot.val();
-            const keys = Object.keys(guests);
-            var uuid = uuidv4().slice(-8);
-            while (keys.includes(uuid)) {
-                uuid = uuidv4().slice(-8);
-            };
-            const newTask = {
-                description: description,
-                number_of_people: number_of_people,
-                addressing_name: addressing + " " + addressing_name,
-                id: uuid,
-            };
-            this.setState({tasks: [...this.state.tasks, newTask]});
-            this.setState({uuids_new: [...this.state.uuids_new, uuid]});
-            // this.add_guest_to_db(newTask);
-          }
-        });
     }
    
     add_user_to_table(description, number_of_people, addressing, addressing_name) {
@@ -149,13 +156,16 @@ class TodoList extends React.Component {
             addressing_name: addressing + " " + addressing_name,
             id: uuid,
         };
-        this.setState({tasks: [...this.state.tasks, new_user]});
+        // this.setState({tasks: [...this.state.tasks, new_user]});
+
+        this.add_new_guest_to_db(new_user);
+
         return uuid;
     }
 
     on_button_add(description, number_of_people, addressing, addressing_name) {
         const uuid = this.add_user_to_table(description, number_of_people, addressing, addressing_name);
-        this.setState({uuids_new: [...this.state.uuids_new, uuid]});
+        // this.setState({uuids_new: [...this.state.uuids_new, uuid]});
     }
 
     deleteTask(id) {
