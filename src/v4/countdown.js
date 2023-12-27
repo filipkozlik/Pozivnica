@@ -1,16 +1,10 @@
 import React, { Component } from "react";
 import "./countdown.css";
-import image_when_title from "../resources/images/when_title.png";
-import sat from "../resources/images/sat.png";
-import sati from "../resources/images/sati.png";
-import sata from "../resources/images/sata.png";
-import dan from "../resources/images/dan.png";
-import dana from "../resources/images/dana.png";
-import minuta from "../resources/images/minuta.png";
-import minute from "../resources/images/minute.png";
 
 import { db } from './firebase_try.js' 
 import { onValue, ref } from 'firebase/database';
+
+import moment from "moment";
 
 class Countdown extends Component {
   read_database() {
@@ -30,7 +24,6 @@ class Countdown extends Component {
         const time = info["itinerary"]["start_time"] + ":00";
         const time_split = info["itinerary"]["start_time"].split(":");
         const wedding_date = new Date(date_split[2], date_split[1], date_split[0], time_split[0], time_split[1])
-        wedding_date.toLocaleString('en-US', { timeZone: 'UTC' })
         this.setState({
           wedding_date: wedding_date,
         });
@@ -44,7 +37,6 @@ class Countdown extends Component {
   }
 
   state = {
-    // wedding_date: Date.parse("7 Aug 2021 19:00:00 GMT+0100"),
     wedding_date: Date.parse(new Date()),
     remaining_days: 0,
     remaining_hours: 0,
@@ -52,14 +44,16 @@ class Countdown extends Component {
   };
 
   refreshRemainingTime() {
-    const current = new Date();
-    current.toLocaleString('en-US', { timeZone: 'UTC' })
-    // let remaining_time = this.state.wedding_date - Date.parse(new Date() + " GMT+0100");
-    let remaining_time = Date.parse(this.state.wedding_date) - Date.parse(current);
+    const wedding_moment = moment(this.state.wedding_date);
+    const current_moment = moment(new Date());
+    var n_days = wedding_moment.diff(current_moment, 'days');
+    var n_hours = wedding_moment.diff(current_moment, 'hours') % 24;
+    var n_minutes = (wedding_moment.diff(current_moment, 'minutes') % (24 * 60)) % 60;
+
     this.setState({
-      remaining_days: Math.floor(remaining_time / 1000 / 60 / 60 / 24),
-      remaining_hours: Math.floor((remaining_time / 1000 / 60 / 60) % 24),
-      remaining_minutes: Math.floor((remaining_time / 1000 / 60) % 60),
+      remaining_days: n_days,
+      remaining_hours: n_hours,
+      remaining_minutes: n_minutes,
     });
   }
 
@@ -70,40 +64,37 @@ class Countdown extends Component {
   render() {
     return (
       <div className="countdown">
-        <div className="number_days lower">{this.state.remaining_days}</div>
-        <div className="number_hours">{this.state.remaining_hours}</div>
-        <div className="number_minutes">{this.state.remaining_minutes}</div>
+        <div className="number_days">
+          <div className="text">{this.state.remaining_days}</div>
+        </div>
+        <div className="number_hours">
+          <div className="text">{this.state.remaining_hours}</div>
+        </div>
+        <div className="number_minutes">
+          <div className="text">{this.state.remaining_minutes}</div>
+        </div>
         <div className="title_days">
-          {this.state.remaining_days % 10 === 1 ? (
-            <img src={dan} className="time_photo" />
-          ) : (
-            <img src={dana} className="time_photo" />
-          )}
+          <div className="text">{this.state.remaining_days % 10 === 1 ? "dan" : "dana"}</div>
         </div>
         <div className="title_hours">
-          {this.state.remaining_hours % 10 === 1 ? (
-            <img src={sat} className="time_photo" />
-          ) : (this.state.remaining_hours <= 10 ||
+          <div className="text">
+            {this.state.remaining_days % 10 === 1 ? "sat" : 
+            ((this.state.remaining_hours <= 10 ||
               this.state.remaining_hours > 20) &&
             this.state.remaining_hours % 10 > 1 &&
-            this.state.remaining_hours % 10 < 5 ? (
-            <img src={sata} className="time_photo" />
-          ) : (
-            <img src={sati} className="time_photo" />
-          )}
+            this.state.remaining_hours % 10 < 5 ? "sata" : "sati")}
+          </div>
         </div>
-        <div className="title_minutes upper">
+        <div className="title_minutes">
+          <div className="text">
           {(this.state.remaining_minutes <= 10 ||
             this.state.remaining_minutes > 20) &&
           this.state.remaining_minutes % 10 > 1 &&
-          this.state.remaining_minutes % 10 < 5 ? (
-            <img src={minute} className="time_photo" />
-          ) : (
-            <img src={minuta} className="time_photo" />
-          )}
+          this.state.remaining_minutes % 10 < 5 ? "minute" : "minuta"}
+          </div>
         </div>
-        <div className="title">
-          <img src={image_when_title} className="countdown_title_photo" />
+        <div className="countdown_title">
+          <div className="title">A koliko još?</div>
         </div>
       </div>
     );

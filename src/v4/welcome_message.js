@@ -48,8 +48,8 @@ class WelcomeMessage extends Component {
 
   render() {
     return (
-      <div className="body">
-        <div id="invite_text" className="text"></div>
+      <div className="welcome_message_container">
+        <div id="invite_text" className="text welcome_message"></div>
       </div>
     );
   }

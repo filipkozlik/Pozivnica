@@ -34,10 +34,10 @@ class Contact extends Component {
       <div>
       <div className="title">Kontakt</div>
       <div className="contact_container">
-        <div className="contact_bride_title">{this.state.bride_name}:</div>
-        <div className="contact_groom_title">{this.state.groom_name}:</div>
-        <div className="contact_bride_number">{this.state.bride_number}</div>
-        <div className="contact_groom_number">{this.state.groom_number}</div>
+        <div className="contact_bride_title text">{this.state.bride_name}:</div>
+        <div className="contact_groom_title text">{this.state.groom_name}:</div>
+        <div className="contact_bride_number text">{this.state.bride_number}</div>
+        <div className="contact_groom_number text">{this.state.groom_number}</div>
       </div>
       </div>
     );

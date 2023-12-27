@@ -105,51 +105,9 @@ class App extends Component {
           <div className="spacer7">
             <Spacer flip="false" />
           </div>
-          {/* <div className="header">
-            <Header />
-          </div>
-          <div className="welcome_message">
-            <WelcomeMessage info={this.state.info} />
-          </div>
-          <div className="itinerary">
-            <Itinerary />
-          </div>
-          <div className="couple_about">
-            <CoupleAbout />
-          </div>
-          <div className="response">
-            <Response info={this.state.info} />
-          </div>
-          <div className="countdown">
-            <Countdown />
-          </div>
-          <div className="contact">
-            <Contact />
-          </div>
-          <div className="spacer1">
-            <Spacer flip="false" />
-          </div>
-          <div className="spacer2">
-            <Spacer flip="true" />
-          </div>
-          <div className="spacer3">
-            <Spacer flip="false" />
-          </div>
-          <div className="spacer4">
-            <Spacer flip="true" />
-          </div>
-          <div className="spacer5">
-            <Spacer flip="false" />
-          </div>
-          <div className="spacer6">
-            <Spacer flip="true" />
-          </div>
-          <div className="spacer7">
-            <Spacer flip="false" />
-          </div>
           <div className="spacer8">
             <Spacer flip="true" />
-          </div>*/}
+          </div>
         </div>
       );
     } else if (this.state.setup) {

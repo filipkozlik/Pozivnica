@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./response.css";
 import "./checkbox.css";
-import cya from "../resources/images/cya.png";
-import how_many from "../resources/images/how_many.png";
 
-// import firebase from "./firebase.js";
+import btn_minus_on from "../resources/images/btn_minus_on.png";
+import btn_plus_on from "../resources/images/btn_plus_on.png";
+import btn_minus_off from "../resources/images/btn_minus_off.png";
+import btn_plus_off from "../resources/images/btn_plus_off.png";
 
 import { db } from './firebase_try.js' 
-import { onValue, ref, set, update } from 'firebase/database';
+import { ref, update } from 'firebase/database';
 
 class Response extends Component {
   static propTypes = {
@@ -56,13 +57,6 @@ class Response extends Component {
   }
 
   send_response(event) {
-    // const templateId = "template_BfVxOubC_clone";
-
-    // this.send_email(templateId, {
-    //   message_html: this.state.is_arriving ? "DA" : "NE",
-    //   number_of_guests: this.state.number_of_people,
-    //   guest_name: this.state.name,
-    // });
     this.setState({
       response_enabled: false,
     });
@@ -81,38 +75,8 @@ class Response extends Component {
     update(ref(db), updates);
   }
 
-  send_email(templateId, variables) {
-    window.emailjs
-      .send(
-        "default_service",
-        templateId,
-        variables,
-        "user_9q3ZAcIVFaBw1YEU0xzoy"
-      )
-      .then((res) => {
-        alert("Email successfully sent!");
-      })
-      // Handle errors here however you like, or use a React error boundary
-      .catch((err) =>
-        alert(
-          "Oh well, you failed. Here some thoughts on the error that occured:",
-          err
-        )
-      );
-  }
-
   increase_people() {
-    // // always enable minus button when number increased
-    // this.setState({
-    //   minus_button_enabled: (this.state.minus_button_enabled = true),
-    // });
-    // // disabled plus button if number is 9
-    // if (this.state.number_of_people === 8) {
-    //   this.setState({
-    //     plus_button_enabled: (this.state.plus_button_enabled = false),
-    //   });
-    // }
-    // allow no more then 10 people
+    if (!this.state.response_enabled) return;
     if (this.state.number_of_people < 9) {
       this.setState({
         number_of_people: this.state.number_of_people + 1,
@@ -121,17 +85,7 @@ class Response extends Component {
   }
 
   decrease_people() {
-    // // always enable plus button when number decreased
-    // this.setState({
-    //   plus_button_enabled: (this.state.plus_button_enabled = true),
-    // });
-    // // disabled minus button if number is 1
-    // if (this.state.number_of_people === 1) {
-    //   this.setState({
-    //     minus_button_enabled: (this.state.minus_button_enabled = false),
-    //   });
-    // }
-    // allow more then 0 people
+    if (!this.state.response_enabled) return;
     if (this.state.number_of_people > 0) {
       this.setState({
         number_of_people: this.state.number_of_people - 1,
@@ -159,8 +113,8 @@ class Response extends Component {
       </div>
     );
     let toggle_button_html = (
-      <label class="checkbox path">
-        <input type="checkbox" onChange={this.is_arriving_change} />
+      <label class="checkbox checkbox_enabled path">
+        <input type="checkbox" checked={this.state.is_arriving} onChange={this.is_arriving_change} />
         <svg viewBox="0 0 21 21">
           <path d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186"></path>
         </svg>
@@ -168,7 +122,7 @@ class Response extends Component {
     );
     if (!this.state.response_enabled) {
       toggle_button_html = (
-        <label class="checkbox path">
+        <label class="checkbox checkbox_disabled path">
           <input type="checkbox" checked={this.state.is_arriving} />
           <svg viewBox="0 0 21 21">
             <path d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186"></path>
@@ -193,86 +147,27 @@ class Response extends Component {
         </div>
       );
     }
-
-    if (this.state.is_arriving) {
-      let minus_button_html = (
-        <button
-          className="response_button_style_round_disabled"
-          selectTextOnFocus={false}
-        >
-          -
-        </button>
-      );
-      let plus_button_html = (
-        <button
-          className="response_button_style_round_disabled"
-          selectTextOnFocus={false}
-        >
-          +
-        </button>
-      );
-
-      // if (this.state.minus_button_enabled) {
-      if (this.state.response_enabled && this.state.number_of_people > 0) {
-        minus_button_html = (
-          <button
-            className="response_button_style_round"
-            onClick={this.decrease_people}
-            // onDoubleClick={this.decrease_people}
-            selectTextOnFocus={false}
-          >
-            -
-          </button>
-        );
-      }
-      // if (this.state.plus_button_enabled) {
-      if (this.state.response_enabled &&this.state.number_of_people < 9) {
-        plus_button_html = (
-          <button
-            className="response_button_style_round"
-            onClick={this.increase_people}
-            // onDoubleClick={this.increase_people}
-            selectTextOnFocus={false}
-          >
-            +
-          </button>
-        );
-      }
-      return (
-        <div className={this.state.input_visual}>
-          <div className="question_coming">
-            <img src={cya} className="response_question_photo" />
-          </div>
-          <div className="toggle_button">{toggle_button_html}</div>
-          <div className="question_number">
-            <img src={how_many} className="response_question_photo" />
-          </div>
-          <div className="number_of_people">{this.state.number_of_people}</div>
-          <div className="minus_button">{minus_button_html}</div>
-          <div className="plus_button">{plus_button_html}</div>
-          <div className="send_button">{send_response_button_html}</div>
-          <div className="warning"> {warning_message_html}</div>
+    
+    return (
+      <div className={this.state.input_visual}>
+        <div className="question_coming">
+          <div className="text">Vidimo se?</div>
         </div>
-      );
-    } else {
-      return (
-        <div className={this.state.input_visual}>
-          <div className="question_coming">
-            <img src={cya} className="response_question_photo" />
-          </div>
-          <div className="toggle_button">
-            <label class="checkbox path">
-              <input type="checkbox" onChange={this.is_arriving_change} />
-              <svg viewBox="0 0 21 21">
-                <path d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186"></path>
-              </svg>
-            </label>
-          </div>
-          <div className="send_button">{send_response_button_html}</div>
-          <div className="warning">{warning_message_html}</div>
-        </div>
-      );
-    }
+        <div className="toggle_button">{toggle_button_html}</div>
+        {this.state.is_arriving && <div className="question_number">
+          <div className="text">U kojem broju?</div>
+        </div>}
+        {this.state.is_arriving && <div className="number_of_people">{this.state.number_of_people}</div>}
+        {this.state.is_arriving && <div className="minus_button btn_style">
+          <img src={this.state.response_enabled && this.state.number_of_people > 0 ? btn_minus_on : btn_minus_off} className="btn" onClick={() => { this.decrease_people(); }} />
+        </div>}
+        {this.state.is_arriving && <div className="plus_button btn_style">
+          <img src={this.state.response_enabled && this.state.number_of_people < 9 ? btn_plus_on : btn_plus_off} className="btn" onClick={() => { this.increase_people(); }} />
+        </div>}
+        <div className="send_button">{send_response_button_html}</div>
+        <div className="warning"> {warning_message_html}</div>
+      </div>
+    );
   }
 
   onChange = (event) => {

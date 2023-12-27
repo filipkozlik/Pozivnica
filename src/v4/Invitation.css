@@ -1,14 +1,31 @@
-:root {
+/** :root {
+  margin: 0;
+  padding: 0;
   color-scheme: light only;
   background: rgb(219, 228, 251);
+  max-width: 100vw;
 }
+
+#controlpanel {
+  width: 100%;
+  padding: 1em;
+  margin-right: 1em;
+  float:center;
+  margin: 0 auto;
+}*/
 
 html, body {
   margin: 0;
   padding: 0;
-  background: rgb(219, 228, 251);
-  height: 100%;
   width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: rgb(219, 228, 251);
+  color-scheme: light only;
+}
+
+* {
+  box-sizing: inherit;
 }
 
 .site {
@@ -25,31 +42,13 @@ html, body {
     "itinerary"
     "spacer4"
     "couple_about"
-    "response"
-    "spacer5"
-    "countdown"
-    "spacer6"
-    "contact"
-    "spacer7";
-  /* margin: 20px 20px; */
-  /* margin-top: 10px;
-  margin-bottom: 10px; */
-  /* grid-template-areas:
-    "spacer1"
-    "header"
-    "spacer2"
-    "welcome_message"
-    "spacer3"
-    "itinerary"
-    "spacer4"
-    "couple_about"
     "spacer5"
     "response"
     "spacer6"
     "countdown"
     "spacer7"
     "contact"
-    "spacer8"; */
+    "spacer8";
 }
 
 .site > * {
@@ -100,4 +99,10 @@ html, body {
 }
 .spacer6 {
   grid-area: spacer6;
+}
+.spacer7 {
+  grid-area: spacer7;
+}
+.spacer8 {
+  grid-area: spacer8;
 }

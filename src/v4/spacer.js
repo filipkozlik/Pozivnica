@@ -18,11 +18,13 @@ class Spacer extends Component {
   }
   render() {
     return (
-      <img
-        src={this.state.image}
-        className="line_spacer_photo"
-        draggable="false"
-      />
+      <div className="spacer_container">
+        <img
+          src={this.state.image}
+          className="line_spacer_photo"
+          draggable="false"
+        />
+      </div>
     );
   }
 }
