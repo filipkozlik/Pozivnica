@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./common.css";
 import "./couple_about.css";
-import couple_about_title_photo from "../resources/images/couple_about_title.png";
-import couple_photo from "../resources/images/D&F_054.jpg";
-import couple_about_text from "../resources/images/couple_about_text.png";
+// import couple_photo from "../resources/images/D&F_054.jpg";
+import couple_photo from "../resources/images/couple_photo.jpeg";
+import pin from "../resources/images/pin.png";
 
 import { db } from './firebase_try.js' 
 import { onValue, ref } from 'firebase/database';
@@ -43,6 +43,10 @@ class CoupleAbout extends Component {
           />
         </div>
         <div className="couple_about_text_box">
+          <div className="pin_container">
+            <div className="pin_left"><img className="pin" src={pin}/></div>
+            <div className="pin_right"><img className="pin" src={pin}/></div>
+          </div>
           <div className="couple_about_text text">{this.state.couple_about}</div>
         </div>
       </div>

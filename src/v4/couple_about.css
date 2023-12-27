@@ -21,6 +21,20 @@
       user-select: none;
       pointer-events: none;
     }
+    .couple_about_text_box {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 70vw;
+      user-select: none;
+      pointer-events: none;
+      background: white;
+      border-width: 2px;
+      border-color: black;
+      border-style: solid;
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
   }
   @media screen and (min-width: 1000px) {
     .couple_about_photo_of_us {
@@ -54,10 +68,43 @@
       background: white;
       border-width: 2px;
       border-color: black;
+      border-style: solid;
       padding-top: 2px;
       padding-bottom: 2px;
     }
   }
+}
+
+.pin_container {
+  width: 100%;
+  display: flex;
+  border-width: 2px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.pin_left {
+  width: 100%;
+  display: flex;
+  border-width: 2px;
+  justify-content: start;
+  align-items: center;
+}
+
+.pin_right {
+  width: 100%;
+  display: flex;
+  border-width: 2px;
+  justify-content: start;
+  align-items: center;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.pin {
+  width: 50px;
+  height: 50px;
 }
 
 .couple_about {
@@ -84,10 +131,10 @@
 .couple_about_photo {
   grid-area: couple_about_photo;
 }
-/* .couple_about_text {
+.couple_about_text_box {
   margin-top: 15px;
   grid-area: couple_about_text;
-} */
+}
 
 .couple_about_photo_animated {
   -webkit-animation-duration: 5s;
