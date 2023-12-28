@@ -1,20 +1,27 @@
 {
   "files": {
-    "main.css": "/Pozivnica/static/css/main.b7f23595.css",
-    "main.js": "/Pozivnica/static/js/main.21a175bd.js",
+    "main.css": "/Pozivnica/static/css/main.055da987.css",
+    "main.js": "/Pozivnica/static/js/main.d2d3c888.js",
+    "static/media/pin.png": "/Pozivnica/static/media/pin.d08f60cd23fd4c845263.png",
     "static/media/line_flip.png": "/Pozivnica/static/media/line_flip.ac1809c79f9e8c753468.png",
     "static/media/party2.png": "/Pozivnica/static/media/party2.baec42af7c818262fb4c.png",
     "static/media/church2.png": "/Pozivnica/static/media/church2.98bcceda5aa55446a754.png",
-    "static/media/D&F_054.jpg": "/Pozivnica/static/media/D&F_054.6be477390a7c42076fc5.jpg",
-    "static/media/couple_about_text.png": "/Pozivnica/static/media/couple_about_text.028995a72fd960127af1.png",
+    "static/media/couple_photo.jpeg": "/Pozivnica/static/media/couple_photo.2f3c7e2dada1df0bab7c.jpeg",
+    "static/media/btn_copy.png": "/Pozivnica/static/media/btn_copy.1a354d1e2b1d6336df5e.png",
+    "static/media/btn_delete.png": "/Pozivnica/static/media/btn_delete.ce5058afd3e7be66e71c.png",
+    "static/media/btn_edit.png": "/Pozivnica/static/media/btn_edit.bbc6274bc76091535bad.png",
+    "static/media/btn_minus_off.png": "/Pozivnica/static/media/btn_minus_off.4a121a21686378a4acfa.png",
+    "static/media/btn_minus_on.png": "/Pozivnica/static/media/btn_minus_on.2f471dec6f53f023750f.png",
+    "static/media/btn_plus_off.png": "/Pozivnica/static/media/btn_plus_off.86b2ae18e4233fb56906.png",
+    "static/media/btn_plus_on.png": "/Pozivnica/static/media/btn_plus_on.d287fbb554b7d0b7099e.png",
     "static/media/line.png": "/Pozivnica/static/media/line.39694947fdb7f99a6e55.png",
     "static/media/venue.png": "/Pozivnica/static/media/venue.0f487301d5fd0426a2a5.png",
     "index.html": "/Pozivnica/index.html",
-    "main.b7f23595.css.map": "/Pozivnica/static/css/main.b7f23595.css.map",
-    "main.21a175bd.js.map": "/Pozivnica/static/js/main.21a175bd.js.map"
+    "main.055da987.css.map": "/Pozivnica/static/css/main.055da987.css.map",
+    "main.d2d3c888.js.map": "/Pozivnica/static/js/main.d2d3c888.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7f23595.css",
-    "static/js/main.21a175bd.js"
+    "static/css/main.055da987.css",
+    "static/js/main.d2d3c888.js"
   ]
 }
