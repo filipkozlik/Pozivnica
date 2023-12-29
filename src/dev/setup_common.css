@@ -4,11 +4,17 @@
   .description {
     grid-area: description;
   }
-  .label_number_of_people {
-    grid-area: label_number_of_people;
+  .label_number_of_adults {
+    grid-area: label_number_of_adults;
   }
-  .number_of_people {
-    grid-area: number_of_people;
+  .number_of_adults {
+    grid-area: number_of_adults;
+  }
+  .label_number_of_kids {
+    grid-area: label_number_of_kids;
+  }
+  .number_of_kids {
+    grid-area: number_of_kids;
   }
   .label_addressing {
     grid-area: label_addressing;

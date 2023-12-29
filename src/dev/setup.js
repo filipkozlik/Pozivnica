@@ -11,7 +11,8 @@ class Setup extends Component {
         super(props);
         this.state = {
             description: '',
-            number_of_people: 1,
+            number_of_adults: 1,
+            number_of_kids: 1,
             addressing: '',
             addressing_name: '',
         }
@@ -47,12 +48,19 @@ class Setup extends Component {
             <input required type="text" id="description" name="description" placeholder="Pero, Milka/Obitelj Kukuriku"
                 onChange={e => this.setState({description: e.target.value})}></input>
         </div>
-        <div className="label_number_of_people align_right add_guest_container_div">
-            <label for="label_number_of_people">Broj ljudi:</label>
+        <div className="label_number_of_adults align_right add_guest_container_div">
+            <label for="label_number_of_adults">Odrasli:</label>
         </div>
-        <div className="number_of_people align_left add_guest_container_div">
-            <input required className="input_number" type="number" id="number_of_people" name="number_of_people" placeholder="2" min="1"
-                onChange={e => this.setState({number_of_people: e.target.value})}></input>
+        <div className="number_of_adults align_left add_guest_container_div">
+            <input required className="input_number" type="number" id="number_of_adults" name="number_of_adults" placeholder="2" min="1"
+                onChange={e => this.setState({number_of_adults: e.target.value})}></input>
+        </div>
+        <div className="label_number_of_kids align_right add_guest_container_div">
+            <label for="label_number_of_kids">Djeca:</label>
+        </div>
+        <div className="number_of_kids align_left add_guest_container_div">
+            <input required className="input_number" type="number" id="number_of_kids" name="number_of_adults" placeholder="2" min="1"
+                onChange={e => this.setState({number_of_kids: e.target.value})}></input>
         </div>
         <div className="label_addressing align_center add_guest_container_div">
             <label for="label_addressing">Kako osloviti?</label>
@@ -76,8 +84,9 @@ class Setup extends Component {
                     this.child.on_button_add(
                         document.getElementsByTagName("input")[0].value,
                         document.getElementsByTagName("input")[1].value,
+                        document.getElementsByTagName("input")[2].value,
                         selector.options[selector.selectedIndex].text,
-                        document.getElementsByTagName("input")[2].value,); 
+                        document.getElementsByTagName("input")[3].value,); 
                 }}>Dodaj
             </button>
         </div>

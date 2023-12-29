@@ -32,8 +32,6 @@ class Response extends Component {
       is_arriving: props.info.coming,
       input_visual: "response_container",
       are_ya_coming: "Vidimo se!",
-      number_of_adults: props.info.responded ? props.info.number_adults_confirmed : props.info.number_adults_expected,
-      number_of_kids: props.info.responded ? props.info.number_kids_confirmed : props.info.number_kids_expected,
       minus_button_enabled: false,
       plus_button_enabled: !props.info.responded,
       invite: props.info.hash,
@@ -43,22 +41,36 @@ class Response extends Component {
     };
     this.is_arriving_change = this.is_arriving_change.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.increase_people = this.increase_people.bind(this);
-    this.decrease_people = this.decrease_people.bind(this);
+    this.increase_adults = this.increase_adults.bind(this);
+    this.decrease_adults = this.decrease_adults.bind(this);
+    this.increase_kids = this.increase_kids.bind(this);
+    this.decrease_kids = this.decrease_kids.bind(this);
   }
 
   
   componentWillMount() {
-    let search = window.location.search;
-    let params = new URLSearchParams(search);
-    let wedding = params.get("wedding");
+    const search = window.location.search;
+    const params = new URLSearchParams(search);
+    const wedding = params.get("wedding");
     
-    const query = ref(db, "/" + wedding + "/info");
-    onValue(query, (snapshot) => {
+    const query_info = ref(db, "/" + wedding + "/info");
+    onValue(query_info, (snapshot) => {
       if(snapshot.exists()) {
         const info = snapshot.val();
         this.setState({
           due_date: info["due_date"],
+        });
+      }
+    });
+    
+    const invite = params.get("invite");
+    const query_invite = ref(db, "/" + wedding + "/guests/" + invite);
+    onValue(query_invite, (snapshot) => {
+      if(snapshot.exists()) {
+        const data = snapshot.val();
+        this.setState({
+          number_of_adults: data["responded"] ? data["number_adults_confirmed"] : data["number_adults_expected"],
+          number_of_kids: data["responded"] ? data["number_kids_confirmed"] : data["number_kids_expected"],
         });
       }
     });
@@ -94,7 +106,7 @@ class Response extends Component {
     update(ref(db), updates);
   }
 
-  increase_people() {
+  increase_adults() {
     if (!this.state.response_enabled) return;
     if (this.state.number_of_adults < 9) {
       this.setState({
@@ -103,11 +115,29 @@ class Response extends Component {
     }
   }
 
-  decrease_people() {
+  decrease_adults() {
     if (!this.state.response_enabled) return;
     if (this.state.number_of_adults > 0) {
       this.setState({
         number_of_adults: this.state.number_of_adults - 1,
+      });
+    }
+  }
+
+  increase_kids() {
+    if (!this.state.response_enabled) return;
+    if (this.state.number_of_kids < 9) {
+      this.setState({
+        number_of_kids: this.state.number_of_kids + 1,
+      });
+    }
+  }
+
+  decrease_kids() {
+    if (!this.state.response_enabled) return;
+    if (this.state.number_of_kids > 0) {
+      this.setState({
+        number_of_kids: this.state.number_of_kids - 1,
       });
     }
   }
@@ -173,25 +203,25 @@ class Response extends Component {
           <div className="text">Vidimo se?</div>
         </div>
         <div className="toggle_button">{toggle_button_html}</div>
-        {this.state.is_arriving && <div className="question_number">
+        {this.state.is_arriving && <div className="question_number_adults">
           <div className="text">Odrasli:</div>
         </div>}
         {this.state.is_arriving && <div className="number_of_adults">{this.state.number_of_adults}</div>}
-        {this.state.is_arriving && <div className="minus_button btn_style">
-          <img src={this.state.response_enabled && this.state.number_of_adults > 0 ? btn_minus_on : btn_minus_off} className="btn" onClick={() => { this.decrease_people(); }} />
+        {this.state.is_arriving && <div className="minus_button_adults btn_style">
+          <img src={this.state.response_enabled && this.state.number_of_adults > 0 ? btn_minus_on : btn_minus_off} className="btn" onClick={() => { this.decrease_adults(); }} />
         </div>}
-        {this.state.is_arriving && <div className="plus_button btn_style">
-          <img src={this.state.response_enabled && this.state.number_of_adults < 9 ? btn_plus_on : btn_plus_off} className="btn" onClick={() => { this.increase_people(); }} />
+        {this.state.is_arriving && <div className="plus_button_adults btn_style">
+          <img src={this.state.response_enabled && this.state.number_of_adults < 9 ? btn_plus_on : btn_plus_off} className="btn" onClick={() => { this.increase_adults(); }} />
         </div>}
-        {this.state.is_arriving && <div className="question_number">
+        {this.state.is_arriving && <div className="question_number_kids">
           <div className="text">Djeca:</div>
         </div>}
         {this.state.is_arriving && <div className="number_of_kids">{this.state.number_of_kids}</div>}
-        {this.state.is_arriving && <div className="minus_button btn_style">
-          <img src={this.state.response_enabled && this.state.number_of_kids > 0 ? btn_minus_on : btn_minus_off} className="btn" onClick={() => { this.decrease_people(); }} />
+        {this.state.is_arriving && <div className="minus_button_kids btn_style">
+          <img src={this.state.response_enabled && this.state.number_of_kids > 0 ? btn_minus_on : btn_minus_off} className="btn" onClick={() => { this.decrease_kids(); }} />
         </div>}
-        {this.state.is_arriving && <div className="plus_button btn_style">
-          <img src={this.state.response_enabled && this.state.number_of_kids < 9 ? btn_plus_on : btn_plus_off} className="btn" onClick={() => { this.increase_people(); }} />
+        {this.state.is_arriving && <div className="plus_button_kids btn_style">
+          <img src={this.state.response_enabled && this.state.number_of_kids < 9 ? btn_plus_on : btn_plus_off} className="btn" onClick={() => { this.increase_kids(); }} />
         </div>}
         <div className="send_button">{send_response_button_html}</div>
         <div className="warning"> {warning_message_html}</div>

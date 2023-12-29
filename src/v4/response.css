@@ -6,18 +6,19 @@
       grid-template-rows: repeat(5, auto);
       grid-template-areas:
         "question_coming question_coming toggle_button"
-        "question_number question_number question_number"
-        "minus_button number_of_people plus_button"
+        "question_number_adults question_number_adults question_number_adults"
+        "minus_button_adults number_of_adults plus_button_adults"
         "send_button send_button send_button"
         "warning warning warning";
     } */
     .response_container {
       display: grid;
       grid-template-columns: repeat(4, auto);
-      grid-template-rows: repeat(4, auto);
+      grid-template-rows: repeat(5, auto);
       grid-template-areas:
         "question_coming . toggle_button ."
-        "question_number minus_button number_of_people plus_button"
+        "question_number_adults minus_button_adults number_of_adults plus_button_adults"
+        "question_number_kids minus_button_adults number_of_kids plus_button_adults"
         "send_button send_button send_button send_button"
         "warning warning warning warning";
     }
@@ -116,10 +117,11 @@
     .response_container {
       display: grid;
       grid-template-columns: repeat(4, auto);
-      grid-template-rows: repeat(4, auto);
+      grid-template-rows: repeat(5, auto);
       grid-template-areas:
         "question_coming . toggle_button ."
-        "question_number minus_button number_of_people plus_button"
+        "question_number_adults minus_button_adults number_of_adults plus_button_adults"
+        "question_number_kids minus_button_kids number_of_kids plus_button_kids"
         "send_button send_button send_button send_button"
         "warning warning warning warning";
     }
@@ -243,17 +245,29 @@
 .toggle_button {
   grid-area: toggle_button;
 }
-.question_number {
-  grid-area: question_number;
+.question_number_adults {
+  grid-area: question_number_adults;
 }
-.minus_button {
-  grid-area: minus_button;
+.question_number_kids {
+  grid-area: question_number_kids;
 }
-.number_of_people {
-  grid-area: number_of_people;
+.minus_button_adults {
+  grid-area: minus_button_adults;
 }
-.plus_button {
-  grid-area: plus_button;
+.minus_button_kids {
+  grid-area: minus_button_kids;
+}
+.number_of_adults {
+  grid-area: number_of_adults;
+}
+.number_of_kids {
+  grid-area: number_of_kids;
+}
+.plus_button_adults {
+  grid-area: plus_button_adults;
+}
+.plus_button_kids {
+  grid-area: plus_button_kids;
 }
 .send_button {
   grid-area: send_button;

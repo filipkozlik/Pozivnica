@@ -33,65 +33,56 @@ function TodoItem({ task, deleteTask, toggleCompleted }) {
     }
  
     return (
-        <div className="guest_row_container">
+        <div className="div_guest_row_container">
+
+            <div className="div_label_description align_right">
+                <label for="label_description">Tko?</label>
+            </div>
+            <div className="div_description align_left input_field">
+                <input readonly value={task.description} type="text" id="description" name="description"></input>
+            </div>
+
+            <div className="div_label_number_of_adults align_right">
+                <label for="label_number_of_adults">Odrasli:</label>
+            </div>
+            <div className="div_number_of_adults align_left input_field">
+                <input readonly value={task.number_of_adults} type="text" id="number_of_adults" name="number_of_adults"></input>
+            </div>
+
+            <div className="div_label_number_of_kids align_right">
+                <label for="label_number_of_kids">Djeca:</label>
+            </div>
+            <div className="div_number_of_kids align_left input_field">
+                <input readonly value={task.number_of_kids} type="text" id="number_of_kids" name="number_of_kids"></input>
+            </div>
+
+            <div className="div_label_addressing align_right">
+                <label for="label_addressing">Kako osloviti?</label>
+            </div>
+            <div className="div_addressing_name align_left input_field">
+                <input readonly value={task.addressing_name} type="text" id="addressing_name" name="addressing_name"></input>
+            </div>
           
-          <div>
-            <div className="btn_copy align_center">
-                <img
-                    id="btn_copy"
-                    src={btn_copy}
-                    className="btn"
-                    onClick={() => {navigator.clipboard.writeText(get_guest_url())}}
-                    // className="couple_about_photo_of_us couple_about_photo_animated couple_about_photo_bounce"
-                />
+            <div>
+                <div className="div_btn_copy align_center">
+                    <img
+                        id="btn_copy"
+                        src={btn_copy}
+                        className="btn"
+                        onClick={() => {navigator.clipboard.writeText(get_guest_url())}}
+                    />
+                </div>
             </div>
-          </div>
-          <div className="label_description align_right">
-              <label for="label_description">Tko?</label>
-          </div>
-          <div className="description align_left input_field">
-              <input readonly value={task.description} type="text" id="description" name="description"></input>
-          </div>
-          <div className="label_number_of_people align_right">
-              <label for="label_number_of_people">Broj ljudi:</label>
-          </div>
-          <div className="number_of_people align_left input_field">
-              <input readonly value={task.number_of_people} type="text" id="number_of_people" name="number_of_people"></input>
-          </div>
-          <div className="label_addressing align_right">
-              <label for="label_addressing">Kako osloviti?</label>
-          </div>
-          <div className="addressing_name align_left input_field">
-              <input readonly value={task.addressing_name} type="text" id="addressing_name" name="addressing_name"></input>
-          </div>
-          {/* <div>
-            <div className="btn_edit align_center">
-                <img
-                    src={btn_edit}
-                    className="btn"
-                    // className="couple_about_photo_of_us couple_about_photo_animated couple_about_photo_bounce"
-                />
+            <div>
+                <div className="div_btn_delete align_center">
+                    <img
+                        src={btn_delete}
+                        className="btn"
+                        onClick={() => { deleteTask(task.id); }}
+                    />
+                </div>
             </div>
-          </div> */}
-          <div>
-            <div className="btn_delete align_center">
-                <img
-                    src={btn_delete}
-                    className="btn"
-                    onClick={() => { deleteTask(task.id); }}
-                    // className="couple_about_photo_of_us couple_about_photo_animated couple_about_photo_bounce"
-                />
-            </div>
-          </div>
         </div>
-        // <div className="todo-item">
-        //     <input 
-        //         type="checkbox"
-        //         checked={task.completed}
-        //         onChange={handleChange}/>
-        //     <p>{task.text}</p>
-        //     <button onClick={() => deleteTask(task.id)}>X</button>
-        // </div>
     );
 }
 export default TodoItem;
