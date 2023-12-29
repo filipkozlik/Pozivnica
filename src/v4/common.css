@@ -1,15 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+@import url('https://fonts.googleapis.com/css?family=Cookie');
+@import url('https://fonts.googleapis.com/css?family=Charm');
+
 @supports (display: grid) {
   @media screen and (max-width: 1000px) {
     .title {
       text-align: center;
       font-size: 30px;
-      font-family: "Dancing Script", cursive;
+      font-family: "Cookie", cursive;
       -webkit-font-smoothing: antialiased;
       user-select: none;
+      font-weight: 300;
+    }
+    .text_bold {
+      font-family: "Charm", cursive; 
+      font-size: 15px; 
+      margin: 10px 10px; 
+      letter-spacing: 6px; 
       font-weight: bold;
+      text-align: center;
+      width: 100%;
     }
     .text {
-      font-family: "Dancing Script", cursive; 
+      font-family: "Charm", cursive; 
       font-size: 15px; 
       margin: 10px 10px; 
       letter-spacing: 6px; 
@@ -17,18 +30,37 @@
       text-align: center;
       width: 100%;
     }
+    .text_normal {
+      font-size: 15px; 
+      margin: 10px 10px; 
+      letter-spacing: 3px; 
+      font-weight: 200;
+      text-align: center;
+      width: 100%;
+      user-select: none;
+    }
   }
   @media screen and (min-width: 1000px) {
     .title {
       text-align: center;
       font-size: 100px;
-      font-family: "Dancing Script", cursive; 
+      font-family: "Cookie", cursive; 
       -webkit-font-smoothing: antialiased;
       user-select: none;
+      font-weight: 300;
+    }
+    .text_bold {
+      font-family: "Charm", cursive; 
+      font-size: 40px; 
+      margin: 10px 50px; 
+      letter-spacing: 10px; 
+      font-style: normal;
       font-weight: bold;
+      text-align: center;
+      width: 100%;
     }
     .text {
-      font-family: "Dancing Script", cursive; 
+      font-family: "Charm", cursive; 
       font-size: 40px; 
       margin: 10px 50px; 
       letter-spacing: 10px; 
@@ -36,6 +68,16 @@
       font-weight: 200;
       text-align: center;
       width: 100%;
+    }
+    .text_normal {
+      font-size: 40px; 
+      margin: 10px 50px; 
+      letter-spacing: 6px; 
+      font-style: normal;
+      font-weight: 200;
+      text-align: center;
+      width: 100%;
+      user-select: none;
     }
   }
 }

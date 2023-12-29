@@ -28,8 +28,8 @@ class Header extends Component {
   render() {
     return (
       <div className="header_container">
-        <div id="couple_name" className="typedtextcss">{this.state.wedding_title}</div>
-        <div id="wedding_date" className="typedtextcss">{this.state.wedding_date}</div>
+        <div id="couple_name" className="header_text">{this.state.wedding_title}</div>
+        <div id="wedding_date" className="header_text">{this.state.wedding_date}</div>
       </div>
     );
   }

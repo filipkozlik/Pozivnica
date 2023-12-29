@@ -71,7 +71,8 @@ class TodoList extends React.Component {
     add_user_from_db(user) {
         const db_user = {
             description: user.name,
-            number_of_people: user.expected_number,
+            number_of_adults: user.number_adults_expected,
+            number_of_kids: user.number_kids_expected,
             addressing_name: user.title,
             id: user.hash,
         };
@@ -94,12 +95,14 @@ class TodoList extends React.Component {
         const postData = {
             responded: false,
             coming: false,
-            expected_number: parseInt(guest_info.number_of_people),
-            confirmed_number: parseInt(guest_info.number_of_people),
+            number_adults_expected: parseInt(guest_info.number_of_adults),
+            number_adults_confirmed: parseInt(guest_info.number_of_adults),
+            number_kids_expected: parseInt(guest_info.number_of_kids),
+            number_kids_confirmed: parseInt(guest_info.number_of_kids),
             hash: guest_info.id,
             title: guest_info.addressing_name,
             name: guest_info.description,
-            single_person: parseInt(guest_info.number_of_people) <= 1
+            single_person: parseInt(guest_info.number_of_adults) + parseInt(guest_info.number_of_kids) <= 1
         };
 
         updates[invite_location + guest_info.id] = postData;
@@ -121,11 +124,12 @@ class TodoList extends React.Component {
             const postData = {
                 responded: false,
                 coming: false,
-                number: guest_info.number_of_people,
+                number: guest_info.number_of_adults,
+                number_kids: guest_info.number_of_kids,
                 hash: guest_info.id,
                 title: guest_info.addressing_name,
                 name: guest_info.description,
-                single_person: guest_info.number_of_people > 1
+                single_person: guest_info.number_of_adults + guest_info.number_of_kids > 1
             };
 
             updates[invite_location + guest_info.id] = postData;
@@ -140,14 +144,17 @@ class TodoList extends React.Component {
         this.get_guests_from_db();
     }
    
-    add_user_to_table(description, number_of_people, addressing, addressing_name) {
+    add_user_to_table(description, number_of_adults, number_of_kids, addressing, addressing_name) {
         const alert_title = "Nepopunjena polja:";
         var alert_text = "";
         if (description == "" || description == null) {
             alert_text += "\n\tTko je pozvan?"
         }
-        if (number_of_people == "" || number_of_people == null) {
-            alert_text += "\n\tOčekivani broj ljudi"
+        if (number_of_adults == "" || number_of_adults == null) {
+            alert_text += "\n\tOčekivani broj odraslih"
+        }
+        if (number_of_kids == "" || number_of_kids == null) {
+            alert_text += "\n\tOčekivani broj djece"
         }
         if (addressing_name == "" || addressing_name == null) {
             alert_text += "\n\tKako osloviti?"
@@ -162,7 +169,8 @@ class TodoList extends React.Component {
         };
         const new_user = {
             description: description,
-            number_of_people: number_of_people,
+            number_of_adults: number_of_adults,
+            number_of_kids: number_of_kids,
             addressing_name: addressing + " " + addressing_name,
             id: uuid,
         };
@@ -173,8 +181,8 @@ class TodoList extends React.Component {
         return uuid;
     }
 
-    on_button_add(description, number_of_people, addressing, addressing_name) {
-        const uuid = this.add_user_to_table(description, number_of_people, addressing, addressing_name);
+    on_button_add(description, number_of_adults, number_of_kids, addressing, addressing_name) {
+        const uuid = this.add_user_to_table(description, number_of_adults, number_of_kids, addressing, addressing_name);
         // this.setState({uuids_new: [...this.state.uuids_new, uuid]});
     }
 

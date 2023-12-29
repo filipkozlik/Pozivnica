@@ -9,7 +9,7 @@ import btn_minus_off from "../resources/images/btn_minus_off.png";
 import btn_plus_off from "../resources/images/btn_plus_off.png";
 
 import { db } from './firebase_try.js' 
-import { ref, update } from 'firebase/database';
+import { ref, update, onValue } from 'firebase/database';
 
 class Response extends Component {
   static propTypes = {
@@ -32,7 +32,8 @@ class Response extends Component {
       is_arriving: props.info.coming,
       input_visual: "response_container",
       are_ya_coming: "Vidimo se!",
-      number_of_people: props.info.responded ? props.info.confirmed_number : props.info.expected_number,
+      number_of_adults: props.info.responded ? props.info.number_adults_confirmed : props.info.number_adults_expected,
+      number_of_kids: props.info.responded ? props.info.number_kids_confirmed : props.info.number_kids_expected,
       minus_button_enabled: false,
       plus_button_enabled: !props.info.responded,
       invite: props.info.hash,
@@ -44,6 +45,23 @@ class Response extends Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.increase_people = this.increase_people.bind(this);
     this.decrease_people = this.decrease_people.bind(this);
+  }
+
+  
+  componentWillMount() {
+    let search = window.location.search;
+    let params = new URLSearchParams(search);
+    let wedding = params.get("wedding");
+    
+    const query = ref(db, "/" + wedding + "/info");
+    onValue(query, (snapshot) => {
+      if(snapshot.exists()) {
+        const info = snapshot.val();
+        this.setState({
+          due_date: info["due_date"],
+        });
+      }
+    });
   }
 
   is_arriving_change(is_arriving) {
@@ -70,25 +88,26 @@ class Response extends Component {
     const updates = {};
     updates[invite_access + "/responded"] = true;
     updates[invite_access + "/coming"] = this.state.is_arriving;
-    updates[invite_access + "/confirmed_number"] = this.state.number_of_people;
+    updates[invite_access + "/number_adults_confirmed"] = this.state.number_of_adults;
+    updates[invite_access + "/number_kids_confirmed"] = this.state.number_of_kids;
 
     update(ref(db), updates);
   }
 
   increase_people() {
     if (!this.state.response_enabled) return;
-    if (this.state.number_of_people < 9) {
+    if (this.state.number_of_adults < 9) {
       this.setState({
-        number_of_people: this.state.number_of_people + 1,
+        number_of_adults: this.state.number_of_adults + 1,
       });
     }
   }
 
   decrease_people() {
     if (!this.state.response_enabled) return;
-    if (this.state.number_of_people > 0) {
+    if (this.state.number_of_adults > 0) {
       this.setState({
-        number_of_people: this.state.number_of_people - 1,
+        number_of_adults: this.state.number_of_adults - 1,
       });
     }
   }
@@ -109,7 +128,7 @@ class Response extends Component {
       <div className="warning_text">
         {this.state.single_person ? "Tvoj " : "Vaš "}odgovor je zabilježen. U
         slučaju promjene plana, molimo da nam
-        {this.state.single_person ? " javiš " : " javite "}do 25.7.2021.
+        {this.state.single_person ? " javiš " : " javite "}do {" " + this.state.due_date}
       </div>
     );
     let toggle_button_html = (
@@ -143,7 +162,7 @@ class Response extends Component {
         <div className="warning_text">
           Molimo{this.state.single_person ? " te " : " vas "}da nam svoj dolazak
           {this.state.single_person ? " potvrdiš " : " potvrdite "}do
-          25.7.2021.
+          {" " + this.state.due_date}
         </div>
       );
     }
@@ -155,14 +174,24 @@ class Response extends Component {
         </div>
         <div className="toggle_button">{toggle_button_html}</div>
         {this.state.is_arriving && <div className="question_number">
-          <div className="text">U kojem broju?</div>
+          <div className="text">Odrasli:</div>
         </div>}
-        {this.state.is_arriving && <div className="number_of_people">{this.state.number_of_people}</div>}
+        {this.state.is_arriving && <div className="number_of_adults">{this.state.number_of_adults}</div>}
         {this.state.is_arriving && <div className="minus_button btn_style">
-          <img src={this.state.response_enabled && this.state.number_of_people > 0 ? btn_minus_on : btn_minus_off} className="btn" onClick={() => { this.decrease_people(); }} />
+          <img src={this.state.response_enabled && this.state.number_of_adults > 0 ? btn_minus_on : btn_minus_off} className="btn" onClick={() => { this.decrease_people(); }} />
         </div>}
         {this.state.is_arriving && <div className="plus_button btn_style">
-          <img src={this.state.response_enabled && this.state.number_of_people < 9 ? btn_plus_on : btn_plus_off} className="btn" onClick={() => { this.increase_people(); }} />
+          <img src={this.state.response_enabled && this.state.number_of_adults < 9 ? btn_plus_on : btn_plus_off} className="btn" onClick={() => { this.increase_people(); }} />
+        </div>}
+        {this.state.is_arriving && <div className="question_number">
+          <div className="text">Djeca:</div>
+        </div>}
+        {this.state.is_arriving && <div className="number_of_kids">{this.state.number_of_kids}</div>}
+        {this.state.is_arriving && <div className="minus_button btn_style">
+          <img src={this.state.response_enabled && this.state.number_of_kids > 0 ? btn_minus_on : btn_minus_off} className="btn" onClick={() => { this.decrease_people(); }} />
+        </div>}
+        {this.state.is_arriving && <div className="plus_button btn_style">
+          <img src={this.state.response_enabled && this.state.number_of_kids < 9 ? btn_plus_on : btn_plus_off} className="btn" onClick={() => { this.increase_people(); }} />
         </div>}
         <div className="send_button">{send_response_button_html}</div>
         <div className="warning"> {warning_message_html}</div>

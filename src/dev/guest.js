@@ -24,7 +24,8 @@ function TodoItem({ task, deleteTask, toggleCompleted }) {
         let params = new URLSearchParams(search);
         let wedding = params.get("wedding");
 
-        const base_url = "http://localhost:3000/Pozivnica";
+        // const base_url = "http://localhost:3000/Pozivnica";
+        const base_url = "https://filipkozlik.github.io/Pozivnica";
         const wedding_query = "wedding=" + wedding;
         const invite_query = "invite=" + task.id;
 
@@ -63,7 +64,7 @@ function TodoItem({ task, deleteTask, toggleCompleted }) {
           <div className="addressing_name align_left input_field">
               <input readonly value={task.addressing_name} type="text" id="addressing_name" name="addressing_name"></input>
           </div>
-          <div>
+          {/* <div>
             <div className="btn_edit align_center">
                 <img
                     src={btn_edit}
@@ -71,7 +72,7 @@ function TodoItem({ task, deleteTask, toggleCompleted }) {
                     // className="couple_about_photo_of_us couple_about_photo_animated couple_about_photo_bounce"
                 />
             </div>
-          </div>
+          </div> */}
           <div>
             <div className="btn_delete align_center">
                 <img

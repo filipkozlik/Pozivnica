@@ -94,7 +94,7 @@ class Countdown extends Component {
           </div>
         </div>
         <div className="countdown_title">
-          <div className="title">A koliko još?</div>
+          <div className="title">Sitno brojimo...</div>
         </div>
       </div>
     );

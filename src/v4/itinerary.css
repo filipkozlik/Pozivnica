@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+@import url('https://fonts.googleapis.com/css?family=Charm');
 
 @supports (display: grid) {
   @media screen and (max-width: 1000px) {
@@ -128,7 +129,7 @@
       pointer-events: none;
     }
     .itinerary_txt_title {
-      font-family: "Dancing Script", cursive; 
+      font-family: "Charm", cursive; 
       font-size: 20px; 
       margin: 10px 10px; 
       letter-spacing: 6px; 
@@ -136,7 +137,7 @@
       text-align: center;
     }
     .itinerary_txt {
-      font-family: "Dancing Script", cursive; 
+      font-family: "Charm", cursive; 
       font-size: 15px; 
       margin: 10px 10px; 
       letter-spacing: 6px; 
@@ -154,7 +155,7 @@
       pointer-events: none;
     }
     .itinerary_txt_title {
-      font-family: "Dancing Script", cursive; 
+      font-family: "Charm", cursive; 
       font-size: 60px; 
       margin: 10px 50px; 
       letter-spacing: 10px; 
@@ -163,7 +164,7 @@
       text-align: center;
     }
     .itinerary_txt {
-      font-family: "Dancing Script", cursive; 
+      font-family: "Charm", cursive; 
       font-size: 40px; 
       margin: 10px 50px; 
       letter-spacing: 10px; 
