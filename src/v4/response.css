@@ -18,7 +18,7 @@
       grid-template-areas:
         "question_coming . toggle_button ."
         "question_number_adults minus_button_adults number_of_adults plus_button_adults"
-        "question_number_kids minus_button_adults number_of_kids plus_button_adults"
+        "question_number_kids minus_button_kids number_of_kids plus_button_kids"
         "send_button send_button send_button send_button"
         "warning warning warning warning";
     }

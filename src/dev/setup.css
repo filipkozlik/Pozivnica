@@ -30,7 +30,7 @@ input[type=submit]:hover {
 }
 
 .add_guest_container {
-  background: rgb(219, 228, 251);
+    background: rgb(219, 228, 251);
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(7, auto);

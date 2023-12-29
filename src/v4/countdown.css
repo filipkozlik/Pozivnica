@@ -1,5 +1,6 @@
 .countdown {
   width: 90vw;
+  margin-left: 5vw;
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(3, auto);
@@ -9,27 +10,21 @@
     "title_days title_hours title_minutes";
 }
 
+.align_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @supports (display: grid) {
   @media screen and (max-width: 1000px) {
     .countdown {
       row-gap: 1px;
     }
-    .countdown > div {
-      align-self: center;
-      justify-self: center;
-      user-select: none;
-      pointer-events: none;
-    }
   }
   @media screen and (min-width: 1000px) {
     .countdown {
       row-gap: 10px;
-    }
-    .countdown > div {
-      align-self: center;
-      justify-self: center;
-      user-select: none;
-      pointer-events: none;
     }
   }
 }

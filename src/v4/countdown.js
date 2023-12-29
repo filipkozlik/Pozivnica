@@ -64,19 +64,19 @@ class Countdown extends Component {
   render() {
     return (
       <div className="countdown">
-        <div className="number_days">
+        <div className="number_days align_center">
           <div className="text">{this.state.remaining_days}</div>
         </div>
-        <div className="number_hours">
+        <div className="number_hours align_center">
           <div className="text">{this.state.remaining_hours}</div>
         </div>
-        <div className="number_minutes">
+        <div className="number_minutes align_center">
           <div className="text">{this.state.remaining_minutes}</div>
         </div>
-        <div className="title_days">
+        <div className="title_days align_center">
           <div className="text">{this.state.remaining_days % 10 === 1 ? "dan" : "dana"}</div>
         </div>
-        <div className="title_hours">
+        <div className="title_hours align_center">
           <div className="text">
             {this.state.remaining_days % 10 === 1 ? "sat" : 
             ((this.state.remaining_hours <= 10 ||
@@ -85,7 +85,7 @@ class Countdown extends Component {
             this.state.remaining_hours % 10 < 5 ? "sata" : "sati")}
           </div>
         </div>
-        <div className="title_minutes">
+        <div className="title_minutes align_center">
           <div className="text">
           {(this.state.remaining_minutes <= 10 ||
             this.state.remaining_minutes > 20) &&
@@ -93,7 +93,7 @@ class Countdown extends Component {
           this.state.remaining_minutes % 10 < 5 ? "minute" : "minuta"}
           </div>
         </div>
-        <div className="countdown_title">
+        <div className="countdown_title align_center">
           <div className="title">Sitno brojimo...</div>
         </div>
       </div>
