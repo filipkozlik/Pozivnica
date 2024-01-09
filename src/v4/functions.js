@@ -24,11 +24,30 @@ export async function typewriter(text_to_write, element_id) {
     while (line_index < text_to_write.length) {
         var letter_index = 0;
         while (letter_index <= text_to_write[line_index].length) {
-        write_text(destination, text_to_write, line_index, letter_index);
-        letter_index++;
-        await sleep(letter_delay);
+            write_text(destination, text_to_write, line_index, letter_index);
+            letter_index++;
+            await sleep(letter_delay);
         }
         await sleep(line_delay);
         line_index++;
     }
+}
+
+export async function zoom_in_text(element_id, text_to_write) {
+    var destination = document.getElementById(element_id);
+    destination.innerHTML = text_to_write;
+    const zoom_delay = 20;
+    var style = window.getComputedStyle(destination, null).getPropertyValue('font-size');
+    const zoom_to = parseFloat(style);
+    var zoom = 0;
+    while (zoom < zoom_to) {
+        destination.style.fontSize = zoom + 'px';
+        zoom++;
+        await sleep(zoom_delay);
+    }
+    // while (zoom > zoom_to) {
+    //     destination.style.fontSize = zoom + 'px';
+    //     zoom--;
+    //     await sleep(zoom_delay * 2);
+    // }
 }

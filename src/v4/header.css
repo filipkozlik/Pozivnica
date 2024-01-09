@@ -1,39 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise');
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
-@import url('https://fonts.googleapis.com/css?family=Cookie');
 @import url('https://fonts.googleapis.com/css?family=Charm');
-@import url('https://fonts.googleapis.com/css?family=Lobster');
-@import url('https://fonts.googleapis.com/css?family=Alex+B');
 
 @supports (display: grid) {
   @media screen and (max-width: 1000px) {
     .header_text {
       font-family: "Charm", cursive; 
-      font-size: 40px; 
-      margin: 10px 50px; 
-      letter-spacing: 6px; 
-      font-weight: bold;
-      text-align: center;
-    }
-    .header_text_charm {
-      font-family: "Charm", cursive; 
-      font-size: 40px; 
-      margin: 10px 50px; 
-      letter-spacing: 6px; 
-      font-weight: bold;
-      text-align: center;
-    }
-    .header_text_lobster {
-      font-family: "Lobster", cursive; 
-      font-size: 40px; 
-      margin: 10px 50px; 
-      letter-spacing: 6px; 
-      font-weight: bold;
-      text-align: center;
-    }
-    .header_text_alex {
-      font-family: "Alex B", cursive; 
-      font-size: 40px; 
+      font-size: 38px; 
       margin: 10px 50px; 
       letter-spacing: 6px; 
       font-weight: bold;
@@ -43,33 +14,6 @@
   @media screen and (min-width: 1000px) {
     .header_text {
       font-family: "Charm", cursive; 
-      font-size: 150px; 
-      margin: 10px 50px; 
-      letter-spacing: 20px; 
-      font-style: normal;
-      font-weight: bold;
-      text-align: center;
-    }
-    .header_text_charm {
-      font-family: "Charm", cursive; 
-      font-size: 150px; 
-      margin: 10px 50px; 
-      letter-spacing: 20px; 
-      font-style: normal;
-      font-weight: bold;
-      text-align: center;
-    }
-    .header_text_lobster {
-      font-family: "Lobster", cursive; 
-      font-size: 150px; 
-      margin: 10px 50px; 
-      letter-spacing: 20px; 
-      font-style: normal;
-      font-weight: bold;
-      text-align: center;
-    }
-    .header_text_alex {
-      font-family: "Alex B", cursive; 
       font-size: 150px; 
       margin: 10px 50px; 
       letter-spacing: 20px; 
