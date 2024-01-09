@@ -30,6 +30,7 @@ class Response extends Component {
     this.state = {
       value: props.value || "",
       is_arriving: props.info.coming,
+      place_needed: false,
       input_visual: "response_container",
       are_ya_coming: "Vidimo se!",
       minus_button_enabled: false,
@@ -40,6 +41,7 @@ class Response extends Component {
       name: props.info.name,
     };
     this.is_arriving_change = this.is_arriving_change.bind(this);
+    this.set_place_needed = this.set_place_needed.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.increase_adults = this.increase_adults.bind(this);
     this.decrease_adults = this.decrease_adults.bind(this);
@@ -71,6 +73,7 @@ class Response extends Component {
         this.setState({
           number_of_adults: data["responded"] ? data["number_adults_confirmed"] : data["number_adults_expected"],
           number_of_kids: data["responded"] ? data["number_kids_confirmed"] : data["number_kids_expected"],
+          place_needed: data["place_needed"],
         });
       }
     });
@@ -78,6 +81,10 @@ class Response extends Component {
 
   is_arriving_change(is_arriving) {
     this.setState({ is_arriving: !this.state.is_arriving });
+  }
+
+  set_place_needed() {
+    this.setState({ place_needed: !this.state.place_needed });
   }
 
   onSubmit(e) {
@@ -102,6 +109,7 @@ class Response extends Component {
     updates[invite_access + "/coming"] = this.state.is_arriving;
     updates[invite_access + "/number_adults_confirmed"] = this.state.number_of_adults;
     updates[invite_access + "/number_kids_confirmed"] = this.state.number_of_kids;
+    updates[invite_access + "/place_needed"] = this.state.place_needed;
 
     update(ref(db), updates);
   }
@@ -179,6 +187,24 @@ class Response extends Component {
         </label>
       );
     }
+    let place_toggle_button_html = (
+      <label class="checkbox checkbox_enabled path">
+        <input type="checkbox" checked={this.state.place_needed} onChange={this.set_place_needed} />
+        <svg viewBox="0 0 21 21">
+          <path d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186"></path>
+        </svg>
+      </label>
+    );
+    if (!this.state.response_enabled) {
+      place_toggle_button_html = (
+        <label class="checkbox checkbox_disabled path">
+          <input type="checkbox" checked={this.state.place_needed} />
+          <svg viewBox="0 0 21 21">
+            <path d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186"></path>
+          </svg>
+        </label>
+      );
+    }
     if (this.state.response_enabled) {
       send_response_button_html = (
         <button
@@ -223,6 +249,10 @@ class Response extends Component {
         {this.state.is_arriving && <div className="plus_button_kids btn_style">
           <img src={this.state.response_enabled && this.state.number_of_kids < 9 ? btn_plus_on : btn_plus_off} className="btn" onClick={() => { this.increase_kids(); }} />
         </div>}
+        {this.state.is_arriving && <div className="question_place">
+          <div className="text">Smještaj?</div>
+        </div>}
+        {this.state.is_arriving && <div className="place_toggle_button">{place_toggle_button_html}</div>}
         <div className="send_button">{send_response_button_html}</div>
         <div className="warning"> {warning_message_html}</div>
       </div>

@@ -14,11 +14,12 @@
     .response_container {
       display: grid;
       grid-template-columns: repeat(4, auto);
-      grid-template-rows: repeat(5, auto);
+      grid-template-rows: repeat(6, auto);
       grid-template-areas:
         "question_coming . toggle_button ."
         "question_number_adults minus_button_adults number_of_adults plus_button_adults"
         "question_number_kids minus_button_kids number_of_kids plus_button_kids"
+        "question_place . place_toggle_button ."
         "send_button send_button send_button send_button"
         "warning warning warning warning";
     }
@@ -117,11 +118,12 @@
     .response_container {
       display: grid;
       grid-template-columns: repeat(4, auto);
-      grid-template-rows: repeat(5, auto);
+      grid-template-rows: repeat(6, auto);
       grid-template-areas:
         "question_coming . toggle_button ."
         "question_number_adults minus_button_adults number_of_adults plus_button_adults"
         "question_number_kids minus_button_kids number_of_kids plus_button_kids"
+        "question_place . place_toggle_button ."
         "send_button send_button send_button send_button"
         "warning warning warning warning";
     }
@@ -268,6 +270,12 @@
 }
 .plus_button_kids {
   grid-area: plus_button_kids;
+}
+.question_place {
+  grid-area: question_place;
+}
+.place_toggle_button {
+  grid-area: place_toggle_button;
 }
 .send_button {
   grid-area: send_button;

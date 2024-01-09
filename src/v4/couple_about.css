@@ -1,7 +1,7 @@
 @supports (display: grid) {
   @media screen and (max-width: 1000px) {
     .pin_container {
-      width: 65vw;
+      width: 90vw;
       display: flex;
       border-width: 2px;
       justify-content: center;
@@ -29,7 +29,7 @@
       /* display: block; */
       margin-left: auto;
       margin-right: auto;
-      width: 55vw;
+      width: 80vw;
       user-select: none;
       pointer-events: none;
       margin-top: 20px;
@@ -38,7 +38,7 @@
       /* display: block; */
       margin-left: auto;
       margin-right: auto;
-      width: 65vw;
+      width: 90vw;
       user-select: none;
       pointer-events: none;
       background: white;
@@ -51,7 +51,7 @@
   }
   @media screen and (min-width: 1000px) {
     .pin_container {
-      width: 55vw;
+      width: 75vw;
       display: flex;
       border-width: 2px;
       justify-content: center;
@@ -79,7 +79,7 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 50vw;
+      width: 65vw;
       user-select: none;
       pointer-events: none;
       margin-top: 20px;
@@ -88,7 +88,7 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 55vw;
+      width: 75vw;
       user-select: none;
       pointer-events: none;
       background: white;
