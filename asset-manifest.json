@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Pozivnica/static/css/main.fab0bfe3.css",
+    "main.css": "/Pozivnica/static/css/main.5b51ed30.css",
     "main.js": "/Pozivnica/static/js/main.2bb417c6.js",
     "static/media/pin.png": "/Pozivnica/static/media/pin.d08f60cd23fd4c845263.png",
     "static/media/line_flip.png": "/Pozivnica/static/media/line_flip.ac1809c79f9e8c753468.png",
@@ -17,11 +17,11 @@
     "static/media/line.png": "/Pozivnica/static/media/line.39694947fdb7f99a6e55.png",
     "static/media/venue.png": "/Pozivnica/static/media/venue.0f487301d5fd0426a2a5.png",
     "index.html": "/Pozivnica/index.html",
-    "main.fab0bfe3.css.map": "/Pozivnica/static/css/main.fab0bfe3.css.map",
+    "main.5b51ed30.css.map": "/Pozivnica/static/css/main.5b51ed30.css.map",
     "main.2bb417c6.js.map": "/Pozivnica/static/js/main.2bb417c6.js.map"
   },
   "entrypoints": [
-    "static/css/main.fab0bfe3.css",
+    "static/css/main.5b51ed30.css",
     "static/js/main.2bb417c6.js"
   ]
 }
