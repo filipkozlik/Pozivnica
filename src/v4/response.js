@@ -250,7 +250,7 @@ class Response extends Component {
           <img src={this.state.response_enabled && this.state.number_of_kids < 9 ? btn_plus_on : btn_plus_off} className="btn" onClick={() => { this.increase_kids(); }} />
         </div>}
         {this.state.is_arriving && <div className="question_place">
-          <div className="text">Smještaj?</div>
+          <div className="text">Trebam smještaj?</div>
         </div>}
         {this.state.is_arriving && <div className="place_toggle_button">{place_toggle_button_html}</div>}
         <div className="send_button">{send_response_button_html}</div>
