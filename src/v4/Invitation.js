@@ -15,6 +15,7 @@ import { db } from './firebase_try.js'
 import { onValue, ref } from 'firebase/database';
 
 import Setup from "../dev/setup.js";
+import Check from "../check_page/check.js";
 
 class App extends Component {
   componentWillMount() {
@@ -23,9 +24,11 @@ class App extends Component {
     let wedding = params.get("wedding");
     let invite = params.get("invite");
     let setup = params.get("setup");
+    let view = params.get("view");
     this.setState({
       ready: false,
       setup: false,
+      view: false,
     });
     // const query = ref(db, "/" + wedding + "/guests");
     // onValue(query, (snapshot) => {
@@ -51,9 +54,14 @@ class App extends Component {
           });
         }
       });
-    } else if (setup == "8ba12fe2") {
+    } else if (setup == "azrili") {
       this.setState({
         setup: true,
+        ready: true,
+      });
+    } else if (view == "azrili") {
+      this.setState({
+        view: true,
         ready: true,
       });
     }
@@ -114,6 +122,12 @@ class App extends Component {
       return(
         <div className="setup">
           <Setup />
+        </div>
+      );
+    } else if (this.state.view) {
+      return(
+        <div className="view">
+          <Check />
         </div>
       );
     } else {

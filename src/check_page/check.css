@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+@import url('https://fonts.googleapis.com/css?family=Cookie');
+@import url('https://fonts.googleapis.com/css?family=Charm');
+
+@supports (display: grid) {
+  @media screen and (max-width: 1000px) {
+    .title {
+      text-align: center;
+      font-size: 30px;
+      font-family: "Cookie", cursive;
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+      font-weight: 300;
+    }
+    .text_bold {
+      font-family: "Charm", cursive; 
+      font-size: 15px; 
+      margin: 10px 10px; 
+      letter-spacing: 6px; 
+      font-weight: bold;
+      text-align: center;
+      width: 100%;
+    }
+    .fancy_text {
+      font-family: "Charm", cursive; 
+      font-size: 15px; 
+      margin: 10px 10px; 
+      letter-spacing: 6px; 
+      font-weight: 200;
+      text-align: center;
+      width: 100%;
+    }
+    .text_normal {
+      font-size: 15px; 
+      margin: 10px 10px; 
+      letter-spacing: 3px; 
+      font-weight: 200;
+      text-align: center;
+      width: 100%;
+      user-select: none;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    .title {
+      text-align: center;
+      font-size: 100px;
+      font-family: "Cookie", cursive; 
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+      font-weight: 300;
+    }
+    .text_bold {
+      font-family: "Charm", cursive; 
+      font-size: 40px; 
+      margin: 10px 50px; 
+      letter-spacing: 10px; 
+      font-style: normal;
+      font-weight: bold;
+      text-align: center;
+      width: 100%;
+    }
+    .fancy_text {
+      font-family: "Charm", cursive; 
+      font-size: 40px; 
+      margin: 10px 50px; 
+      letter-spacing: 10px; 
+      font-style: normal;
+      font-weight: 200;
+      text-align: center;
+      width: 100%;
+    }
+    .text_normal {
+      font-size: 40px; 
+      margin: 10px 50px; 
+      letter-spacing: 6px; 
+      font-style: normal;
+      font-weight: 200;
+      text-align: center;
+      width: 100%;
+      user-select: none;
+    }
+  }
+}
+
+.check_container {
+    background: rgb(219, 228, 251);
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(6, auto);
+    width: 100%;
+    grid-template-areas:
+      "label_accepted"
+      "table_accepted"
+      "label_rejected"
+      "table_rejected"
+      "label_unknown"
+      "table_unknown";
+  }
+
+  .check_container {
+    height: 50px;
+  }
+
+  .label_accepted {
+    grid-area: label_accepted;
+  }
+  .table_accepted {
+    grid-area: table_accepted;
+  }
+  .table_rejected {
+    grid-area: table_rejected;
+  }
+  .label_unknown {
+    grid-area: label_unknown;
+  }
+  .table_unknown {
+    grid-area: table_unknown;
+  }
+
+  .align_left {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+  .align_right {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  }
+  .align_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

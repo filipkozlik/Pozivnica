@@ -2,13 +2,9 @@ import React from 'react';
 import './guest.css';
 
 import btn_copy from "../resources/images/btn_copy.png";
-import btn_edit from "../resources/images/btn_edit.png";
 import btn_delete from "../resources/images/btn_delete.png";
 
-function TodoItem({ task, deleteTask, toggleCompleted, edit_guest  }) {
-    function handleChange() {
-        toggleCompleted(task.id);
-    }
+function Guest({ task, deleteTask }) {
 
     function animate_button(btn_id) {
         const element = document.getElementById(btn_id)
@@ -82,26 +78,7 @@ function TodoItem({ task, deleteTask, toggleCompleted, edit_guest  }) {
                     />
                 </div>
             </div>
-            {/* <div>
-                <div className="div_btn_edit align_center">
-                    <img
-                        src={btn_edit}
-                        className="btn"
-                        onClick={() => { 
-                            const addressing = task.addressing_name.split(" ");
-                            edit_guest({
-                                "description": task.description,
-                                "number_of_adults": task.number_of_adults,
-                                "number_of_kids": task.number_of_kids,
-                                "addressing": addressing[0],
-                                "addressing_name": addressing.slice(1, 100).join(" "),
-                                "uuid": task.id,
-                            }); 
-                        }}
-                    />
-                </div>
-            </div> */}
         </div>
     );
 }
-export default TodoItem;
+export default Guest;
