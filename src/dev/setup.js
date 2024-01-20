@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import "./setup.css";
 
 import TodoList from './list_of_guests';
+import DialogGuest from "./dialog_add_guest.js";
+
+import btn_add from "../resources/images/btn_add.png";
+import btn_save from "../resources/images/btn_finish.png";
+import button_cancel from "../resources/images/btn_delete.png";
 
 // import { db } from './firebase_try.js'; 
 // import { onValue, ref } from 'firebase/database';
@@ -15,6 +20,7 @@ class Setup extends Component {
             number_of_kids: 1,
             addressing: '',
             addressing_name: '',
+            editing_guest: false,
         }
     }
 //   componentWillMount() {
@@ -37,63 +43,96 @@ class Setup extends Component {
 //     });
 //   }
 
+    add_user_to_db() {
+        const selector = document.getElementsByTagName("select")[0];
+        if (this.state.editing_guest) {
+            this.child_guest.on_button_edit(
+                document.getElementsByTagName("input")[0].value,
+                document.getElementsByTagName("input")[1].value,
+                document.getElementsByTagName("input")[2].value,
+                selector.options[selector.selectedIndex].text,
+                document.getElementsByTagName("input")[3].value
+            ); 
+        } else {
+            this.child_guest.on_button_add(
+                document.getElementsByTagName("input")[0].value,
+                document.getElementsByTagName("input")[1].value,
+                document.getElementsByTagName("input")[2].value,
+                selector.options[selector.selectedIndex].text,
+                document.getElementsByTagName("input")[3].value
+            );
+        }
+    }
+
+    edit_guest(guest_data) {
+        this.setState({
+            editing_guest: true,
+        });
+        var dialog = document.getElementById("dialog_user_add");
+        dialog.showModal();
+        var dialog_inner = dialog.children[0].children[0].children[0];
+        dialog_inner.children[1].children[0].value = guest_data.description;
+        dialog_inner.children[3].children[0].value = guest_data.number_of_adults;
+        dialog_inner.children[5].children[0].value = guest_data.number_of_kids;
+        dialog_inner.children[7].children[0].selectedIndex = guest_data.addressing === "Draga" ? 1 : 0;
+        dialog_inner.children[8].children[0].value = guest_data.addressing_name;
+    }
+
+    open_dialog() {
+        this.setState({
+            editing_guest: false,
+        });
+        var dialog = document.getElementById("dialog_user_add");
+        dialog.showModal();
+    }
+
+    close_dialog() {
+        var dialog = document.getElementById("dialog_user_add");
+        dialog.close();
+    }
+
   render() {
     return (
-      <div className="add_guest_container">
-        
-        <div className="label_description align_right add_guest_container_div">
-            <label for="label_description">Tko je pozvan?</label>
+        <div>
+            <dialog id="dialog_user_add" className="dialog_user_add">
+                <div className="container_user_add">
+                    <div id="dialog_div" className="align_center">
+                        <DialogGuest ref={instance => { this.child_dialog = instance; }}/>
+                    </div>
+                    <div className="dialog_user_add_buttons">
+                        <div className="button_save align_center add_guest_container_div">
+                            <img
+                                id="button_save"
+                                src={btn_save}
+                                className="btn"
+                                onClick={() => { this.add_user_to_db(); this.close_dialog(); }}
+                            />
+                        </div>
+                        <div className="button_cancel align_center add_guest_container_div">
+                            <img
+                                id="button_cancel"
+                                src={button_cancel}
+                                className="btn"
+                                onClick={() => { this.close_dialog(); }}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+            <div className="add_guest_container">
+                <div className="button_add align_center add_guest_container_div">
+                    <img
+                        id="btn_add"
+                        src={btn_add}
+                        className="btn"
+                        onClick={() => { this.open_dialog(); }}
+                    />
+                </div>
+                <div id="todo_list" className="todo_list align_center">
+                    <TodoList ref={instance => { this.child_guest = instance; }} edit_guest={this.edit_guest}/>
+                </div>
+            </div>
         </div>
-        <div className="description align_left input_field add_guest_container_div">
-            <input required type="text" id="description" name="description" placeholder="Pero, Milka/Obitelj Kukuriku"
-                onChange={e => this.setState({description: e.target.value})}></input>
-        </div>
-        <div className="label_number_of_adults align_right add_guest_container_div">
-            <label for="label_number_of_adults">Odrasli:</label>
-        </div>
-        <div className="number_of_adults align_left add_guest_container_div">
-            <input required className="input_number" type="number" id="number_of_adults" name="number_of_adults" placeholder="2" min="1"
-                onChange={e => this.setState({number_of_adults: e.target.value})}></input>
-        </div>
-        <div className="label_number_of_kids align_right add_guest_container_div">
-            <label for="label_number_of_kids">Djeca:</label>
-        </div>
-        <div className="number_of_kids align_left add_guest_container_div">
-            <input required className="input_number" type="number" id="number_of_kids" name="number_of_adults" placeholder="2" min="1"
-                onChange={e => this.setState({number_of_kids: e.target.value})}></input>
-        </div>
-        <div className="label_addressing align_center add_guest_container_div">
-            <label for="label_addressing">Kako osloviti?</label>
-        </div>
-        <div className="addressing align_right add_guest_container_div">
-            <select className="addressing_modif" id="addressing" name="addressing"
-                onChange={e => this.setState({addressing: e.target})}>
-                <option value="label_dragi">Dragi</option>
-                <option value="label_draga">Draga</option>
-            </select>
-        </div>
-        <div className="addressing_name align_left input_field add_guest_container_div">
-            <input required type="text" id="addressing_name" name="addressing_name" placeholder="Pero/Milka/obitelji Kukuriku"
-                onChange={e => this.setState({addressing_name: e.target.value})}></input>
-        </div>
-        <div className="button_add align_center add_guest_container_div">
-            <button
-                className="button_style"
-                onClick={() => {
-                    const selector = document.getElementsByTagName("select")[0];
-                    this.child.on_button_add(
-                        document.getElementsByTagName("input")[0].value,
-                        document.getElementsByTagName("input")[1].value,
-                        document.getElementsByTagName("input")[2].value,
-                        selector.options[selector.selectedIndex].text,
-                        document.getElementsByTagName("input")[3].value,); 
-                }}>Dodaj
-            </button>
-        </div>
-        <div id="todo_list" className="todo_list align_center">
-            <TodoList ref={instance => { this.child = instance; }}/>
-        </div>
-      </div>
     );
   }
 }

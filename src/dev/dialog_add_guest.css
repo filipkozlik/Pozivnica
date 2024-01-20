@@ -1,0 +1,51 @@
+
+
+.dialog_guest_container {
+    background-color: lightblue;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(6, auto);
+    width: 100%;
+    grid-template-areas:
+      "label_description description"
+      "label_number_of_adults number_of_adults"
+      "label_number_of_kids number_of_kids"
+      "label_addressing label_addressing"
+      "addressing addressing_name"
+      "button_finish button_finish";
+  }
+
+  .add_guest_container_div {
+    height: 50px;
+  }
+
+  .label_description {
+    grid-area: label_description;
+  }
+  .description {
+    grid-area: description;
+  }
+  .label_number_of_adults {
+    grid-area: label_number_of_adults;
+  }
+  .number_of_adults {
+    grid-area: number_of_adults;
+  }
+  .label_number_of_kids {
+    grid-area: label_number_of_kids;
+  }
+  .number_of_kids {
+    grid-area: number_of_kids;
+  }
+  .label_addressing {
+    grid-area: label_addressing;
+  }
+  .addressing {
+    grid-area: addressing;
+  }
+  .addressing_name {
+    grid-area: addressing_name;
+  }
+  .button_finish {
+    grid-area: button_finish;
+  }

@@ -33,17 +33,11 @@ input[type=submit]:hover {
     background: rgb(219, 228, 251);
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(7, auto);
+    grid-template-rows: repeat(2, auto);
     width: 100%;
     grid-template-areas:
-      "label_description description"
-      "label_number_of_adults number_of_adults"
-      "label_number_of_kids number_of_kids"
-      "label_addressing label_addressing"
-      "addressing addressing_name"
       "button_add button_add"
-      "todo_list todo_list"
-      "button_save button_save";
+      "todo_list todo_list";
   }
 
   .add_guest_container_div {
@@ -168,6 +162,37 @@ input[type=submit]:hover {
   }
   .contact_groom_number {
     grid-area: contact_groom_number;
+  }
+
+  .dialog_user_add {
+    border-radius: 10px;
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+    background-color: lightblue;
+  }
+
+  .container_user_add {
+    background: rgb(219, 228, 251);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .dialog_user_add_buttons {
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .dialog_user_add_buttons > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
   }
   
 

@@ -13,7 +13,8 @@ class TodoList extends React.Component {
             uuids_in_db: [],
             uuids_new: [],
             tasks: [],
-            text: ''
+            text: '',
+            edit_guest: props.edit_guest,
         };
     }
 
@@ -183,7 +184,10 @@ class TodoList extends React.Component {
 
     on_button_add(description, number_of_adults, number_of_kids, addressing, addressing_name) {
         const uuid = this.add_user_to_table(description, number_of_adults, number_of_kids, addressing, addressing_name);
-        // this.setState({uuids_new: [...this.state.uuids_new, uuid]});
+    }
+
+    on_button_edit(description, number_of_adults, number_of_kids, addressing, addressing_name) {
+        const uuid = this.add_user_to_table(description, number_of_adults, number_of_kids, addressing, addressing_name);
     }
 
     deleteTask(id) {
@@ -210,7 +214,8 @@ class TodoList extends React.Component {
                     key={task.id} 
                     task={task}
                     deleteTask={this.delete_guest_from_db}
-                    toggleCompleted={this.toggleCompleted}/>
+                    toggleCompleted={this.toggleCompleted}
+                    edit_guest={this.state.edit_guest}/>
             })}
             {this.is_save_button_visible?.() ?
                 <div className="button_save align_center add_guest_container_div">
