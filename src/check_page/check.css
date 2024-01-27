@@ -132,3 +132,57 @@
     align-items: center;
     justify-content: center;
   }
+
+  .table_info_container {
+      background: rgb(219, 228, 251);
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: repeat(4, auto);
+      width: 100%;
+      grid-template-areas:
+        "table_title table_title"
+        "table_label_no_invite table_no_invite"
+        "table_label_no_adults table_no_adults"
+        "table_label_no_kids table_no_kids";
+    }
+
+  .table_info_accepted_container {
+      background: rgb(219, 228, 251);
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: repeat(4, auto);
+      width: 100%;
+      grid-template-areas:
+        "table_title table_title"
+        "table_label_no_invite table_no_invite"
+        "table_label_no_adults table_no_adults"
+        "table_label_no_kids table_no_kids"
+        "table_label_place table_place";
+    }
+    .table_title {
+      grid-area: table_title;
+    }
+    .table_label_no_invite {
+      grid-area: table_label_no_invite;
+    }
+    .table_no_invite {
+      grid-area: table_no_invite;
+    }
+    .table_label_no_adults {
+      grid-area: table_label_no_adults;
+    }
+    .table_no_adults {
+      grid-area: table_no_adults;
+    }
+    .table_label_no_kids {
+      grid-area: table_label_no_kids;
+    }
+    .table_no_kids {
+      grid-area: table_no_kids;
+    }
+    .table_label_place {
+      grid-area: table_label_place;
+    }
+    .table_place {
+      grid-area: table_place;
+    }

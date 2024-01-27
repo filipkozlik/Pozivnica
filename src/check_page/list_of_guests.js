@@ -75,9 +75,10 @@ class GuestTable extends React.Component {
     add_user_from_db(user) {
         const db_user = {
             description: user.name,
-            number_of_adults: user.number_adults_expected,
-            number_of_kids: user.number_kids_expected,
+            number_of_adults: user.number_adults_confirmed,
+            number_of_kids: user.number_kids_confirmed,
             addressing_name: user.title,
+            place_needed: user.place_needed ? "DA" : "NE",
             id: user.hash,
         };
         this.setState({tasks: [...this.state.tasks, db_user]});

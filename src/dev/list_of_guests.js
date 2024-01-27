@@ -103,7 +103,8 @@ class TodoList extends React.Component {
             hash: guest_info.id,
             title: guest_info.addressing_name,
             name: guest_info.description,
-            single_person: parseInt(guest_info.number_of_adults) + parseInt(guest_info.number_of_kids) <= 1
+            single_person: parseInt(guest_info.number_of_adults) + parseInt(guest_info.number_of_kids) <= 1,
+            place_needed: false
         };
 
         updates[invite_location + guest_info.id] = postData;

@@ -29,7 +29,7 @@ function Guest({ task, deleteTask }) {
     }
  
     return (
-        <div className="div_guest_row_container">
+        <div className="div_guest_view">
 
             <div className="div_label_description align_right">
                 <label for="label_description">Tko?</label>
@@ -57,6 +57,13 @@ function Guest({ task, deleteTask }) {
             </div>
             <div className="div_addressing_name align_left input_field">
                 <input readonly value={task.addressing_name} type="text" id="addressing_name" name="addressing_name"></input>
+            </div>
+
+            <div className="div_label_place align_right">
+                <label for="label_place">Smještaj?</label>
+            </div>
+            <div className="div_place align_left input_field">
+                <input readonly value={task.place_needed} type="text" id="place" name="place"></input>
             </div>
           
             <div>

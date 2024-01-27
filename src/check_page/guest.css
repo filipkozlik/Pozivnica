@@ -1,60 +1,6 @@
-.input_field {
-    width: 100%;
-    height: 50px;
-}
-
-.btn {
-    width: 50px;
-    height: 50px;
-}
-
-.div_label_description {
-    grid-area: label_description;
-}
-
-.div_description {
-    grid-area: description;
-}
-
-.div_label_number_of_adults {
-    grid-area: label_number_of_adults;
-}
-
-.div_number_of_adults {
-    grid-area: number_of_adults;
-}
-
-.div_label_number_of_kids {
-    grid-area: label_number_of_kids;
-}
-
-.div_number_of_kids {
-    grid-area: number_of_kids;
-}
-
-.div_label_addressing {
-    grid-area: label_addressing;
-}
-
-.div_addressing_name {
-    grid-area: addressing_name;
-}
-
-.div_btn_copy {
-    grid-area: btn_copy;
-}
-
-.div_btn_edit {
-    grid-area: btn_edit;
-}
-
-.div_btn_delete {
-    grid-area: btn_delete;
-}
-  
 @supports (display: grid) {
     @media screen and (max-width: 1000px) {
-        .div_guest_row_container {
+        .div_guest_view {
             border-radius: 10px;
             border-color: black;
             border-width: 5px;
@@ -62,7 +8,7 @@
             background-color: lightblue;
             display: grid;
             grid-template-columns: repeat(3, auto);
-            grid-template-rows: repeat(4, auto);
+            grid-template-rows: repeat(5, auto);
             width: 100%;
             padding-left: 10px;
             padding-right: 10px;
@@ -70,11 +16,12 @@
               "label_description      description       btn_copy"
               "label_number_of_adults number_of_adults  btn_copy"
               "label_number_of_kids   number_of_kids    btn_delete"
-              "label_addressing       addressing_name   btn_delete";
+              "label_addressing       addressing_name   btn_delete"
+              "label_place            place             .";
         }
     }
     @media screen and (min-width: 1000px) {
-        .div_guest_row_container {
+        .div_guest_view {
             border-radius: 10px;
             border-color: black;
             border-width: 5px;
@@ -88,9 +35,72 @@
             padding-right: 10px;
             grid-template-areas:
               "label_description description label_number_of_adults number_of_adults btn_copy"
-              "label_addressing addressing_name label_number_of_kids number_of_kids btn_delete";
+              "label_addressing addressing_name label_number_of_kids number_of_kids btn_delete"
+              "label_place place . . .";
         }
     }
+}
+
+.input_field {
+  width: 100%;
+  height: 50px;
+}
+
+.btn {
+  width: 50px;
+  height: 50px;
+}
+
+.div_label_description {
+  grid-area: label_description;
+}
+
+.div_description {
+  grid-area: description;
+}
+
+.div_label_number_of_adults {
+  grid-area: label_number_of_adults;
+}
+
+.div_number_of_adults {
+  grid-area: number_of_adults;
+}
+
+.div_label_number_of_kids {
+  grid-area: label_number_of_kids;
+}
+
+.div_number_of_kids {
+  grid-area: number_of_kids;
+}
+
+.div_label_addressing {
+  grid-area: label_addressing;
+}
+
+.div_addressing_name {
+  grid-area: addressing_name;
+}
+
+.div_btn_copy {
+  grid-area: btn_copy;
+}
+
+.div_btn_edit {
+  grid-area: btn_edit;
+}
+
+.div_btn_delete {
+  grid-area: btn_delete;
+}
+
+.div_label_place {
+  grid-area: label_place;
+}
+
+.div_place {
+  grid-area: place;
 }
 
 @-webkit-keyframes btn_animation_css {
