@@ -23,7 +23,7 @@ class Countdown extends Component {
         const date = date_split[2] + "-" + date_split[1] + "-" + date_split[0];
         const time = info["itinerary"]["start_time"] + ":00";
         const time_split = info["itinerary"]["start_time"].split(":");
-        const wedding_date = new Date(date_split[2], date_split[1], date_split[0], time_split[0], time_split[1])
+        const wedding_date = new Date(date_split[2], date_split[1] - '1', date_split[0], time_split[0], time_split[1])
         this.setState({
           wedding_date: wedding_date,
         });
